@@ -1,0 +1,61 @@
+spring:
+    application:
+        name: MonnifyAPIClone
+
+    datasource:
+        url: ${DB_URL}
+        username: ${DB_USER}
+        password: ${DB_PASSWORD}
+        driver-class-name: org.postgresql.Driver
+
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+        database:
+            postgresql
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+    security:
+        user:
+            name: ${ADMIN_USERNAME}
+            password: ${ADMIN_PASSWD}
+
+
+
+server:
+    port: 8200
+    error:
+        include-stacktrace: always
+    servlet:
+        context-path: /api/v1
+
+
+logging:
+    level:
+        org:
+        springframework:
+            web: DEBUG
+            security:
+                web: DEBUG
+                oauth2:
+                    provider: DEBUG
+        hibernate: TRACE
+        com:
+            ayo:
+                monnify_api_clone: INFO
+    file:
+        name: app.log
+        append: true
+
+info:
+    app:
+        name: Monnify API Clone
+        version: 1.0.0
+
+dev:
+    name: Ayobami
+    email: ayobamidele006@gmail.com
