@@ -8,6 +8,7 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import com.ayo.monnify_api_clone.user.UserEntity;
 import com.ayo.monnify_api_clone.user.UserRepository;
@@ -25,13 +26,8 @@ public class ApplicationConfig {
     // create a bean for user userDetails service
     @Bean
     public UserDetailsService userDetailsService() {
-        return new UserDetailsService() {
-            @Autowired
-            public UserEntity loadUserByUsername(String username) {
-                return userRepository.findByApiKey(username).orElseThrow(() -> new RuntimeException("User not found"));
-            }
-            
-        };
+        return username -> userRepository.findByApiKey(username)
+            .orElseThrow(() -> new UsernameNotFoundException("User not found"));
         
     }
     @Bean

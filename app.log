@@ -579,3 +579,93 @@ Caused by: org.hibernate.AnnotationException: Entity 'com.ayo.monnify_api_clone.
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.12.jar:6.1.12]
 	... 20 common frames omitted
 
+2024-08-30T15:09:54.921+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Starting MonnifyApiCloneApplication using Java 17.0.9 with PID 18640 (C:\Users\Ayo\Projects\monnify_api_clone\target\classes started by Ayo in C:\Users\Ayo\Projects\monnify_api_clone)
+2024-08-30T15:09:54.934+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-30T15:09:55.191+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Ayo\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/Ayo/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/Ayo/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/Ayo/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
+2024-08-30T15:09:55.251+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-30T15:09:55.304+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-30T15:09:59.018+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-30T15:09:59.233+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 172 ms. Found 1 JPA repository interface.
+2024-08-30T15:10:01.861+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8200 (http)
+2024-08-30T15:10:02.045+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-30T15:10:02.240+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-30T15:10:02.615+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-08-30T15:10:02.617+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7226 ms
+2024-08-30T15:10:03.074+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-30T15:10:03.373+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-30T15:10:03.512+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-30T15:10:04.763+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-30T15:10:04.909+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-30T15:10:05.458+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2174f091
+2024-08-30T15:10:05.464+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-30T15:10:05.644+01:00  WARN 18640 --- [MonnifyAPIClone] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-30T15:10:10.810+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-30T15:10:11.233+01:00  WARN 18640 --- [MonnifyAPIClone] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-30T15:10:11.238+01:00  WARN 18640 --- [MonnifyAPIClone] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk1pmlqhjyenjrcaapx6r575hq" of relation "users" does not exist, skipping
+2024-08-30T15:10:11.254+01:00  WARN 18640 --- [MonnifyAPIClone] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-30T15:10:11.255+01:00  WARN 18640 --- [MonnifyAPIClone] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
+2024-08-30T15:10:11.267+01:00  WARN 18640 --- [MonnifyAPIClone] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-08-30T15:10:11.270+01:00  WARN 18640 --- [MonnifyAPIClone] [restartedMain] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk38t9i83viye40fcfgu23ib51t" of relation "users" does not exist, skipping
+2024-08-30T15:10:11.316+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30T15:10:14.278+01:00 ERROR 18640 --- [MonnifyAPIClone] [restartedMain] o.s.b.web.embedded.tomcat.TomcatStarter  : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthenticationFilterChain' defined in file [C:\Users\Ayo\Projects\monnify_api_clone\target\classes\com\ayo\monnify_api_clone\config\JwtAuthenticationFilterChain.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'userDetailsService': Unsatisfied dependency expressed through method 'loadUserByUsername' parameter 0: No qualifying bean of type 'java.lang.String' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-08-30T15:10:14.440+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-30T15:10:14.663+01:00  WARN 18640 --- [MonnifyAPIClone] [restartedMain] o.a.c.loader.WebappClassLoaderBase       : The web application [api#v1] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.9/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.9/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.9/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.9/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.9/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.9/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.9/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.9/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.9/java.lang.Thread.run(Thread.java:842)
+2024-08-30T15:10:14.671+01:00  WARN 18640 --- [MonnifyAPIClone] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2024-08-30T15:10:14.674+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30T15:10:14.688+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-30T15:10:14.784+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-30T15:10:14.865+01:00  INFO 18640 --- [MonnifyAPIClone] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-30T15:10:15.007+01:00 ERROR 18640 --- [MonnifyAPIClone] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method loadUserByUsername in com.ayo.monnify_api_clone.config.ApplicationConfig$1 required a bean of type 'java.lang.String' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'java.lang.String' in your configuration.
+
+2024-08-30T15:14:12.901+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Starting MonnifyApiCloneApplication using Java 17.0.9 with PID 13856 (C:\Users\Ayo\Projects\monnify_api_clone\target\classes started by Ayo in C:\Users\Ayo\Projects\monnify_api_clone)
+2024-08-30T15:14:12.918+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-30T15:14:13.296+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\Ayo\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/Ayo/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/Ayo/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/Ayo/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
+2024-08-30T15:14:13.442+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-30T15:14:13.718+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-30T15:14:18.022+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-30T15:14:18.328+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 261 ms. Found 1 JPA repository interface.
+2024-08-30T15:14:22.112+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8200 (http)
+2024-08-30T15:14:22.226+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-30T15:14:22.226+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-30T15:14:22.727+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-08-30T15:14:22.727+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8960 ms
+2024-08-30T15:14:23.803+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-30T15:14:24.159+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-30T15:14:24.306+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-30T15:14:25.633+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-30T15:14:25.739+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-30T15:14:26.359+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5cafd418
+2024-08-30T15:14:26.380+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-30T15:14:26.568+01:00  WARN 13856 --- [MonnifyAPIClone] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-30T15:14:30.491+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-30T15:14:30.650+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30T15:14:32.056+01:00  WARN 13856 --- [MonnifyAPIClone] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-30T15:14:33.520+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-30T15:14:33.528+01:00  WARN 13856 --- [MonnifyAPIClone] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-08-30T15:14:36.541+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-30T15:14:36.848+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8200 (http) with context path '/api/v1'
+2024-08-30T15:14:37.035+01:00  INFO 13856 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Started MonnifyApiCloneApplication in 27.087 seconds (process running for 31.696)
