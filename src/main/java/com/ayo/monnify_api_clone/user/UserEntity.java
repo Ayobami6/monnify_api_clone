@@ -97,6 +97,9 @@ public class UserEntity implements UserDetails {
     @PreUpdate
     protected void update() {
         this.updatedAt = LocalDateTime.now();
+        if (mode == Mode.TEST) {
+            this.apiKey = "MK_PROD_" + UUID.randomUUID().toString().replace("-", "").substring(0, 10).toUpperCase();
+        }
     }
 
     public void fund(float amount) {

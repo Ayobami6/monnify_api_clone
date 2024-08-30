@@ -4003,3 +4003,161 @@ java.lang.NullPointerException: Cannot invoke "String.substring(int)" because "a
 2024-08-30T18:58:53.289+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
 2024-08-30T19:19:37.202+01:00  WARN 15112 --- [MonnifyAPIClone] [HikariPool-12 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-12 - Thread starvation or clock leap detected (housekeeper delta=14m45s10ms318µs600ns).
 2024-08-30T20:35:13.033+01:00  WARN 15112 --- [MonnifyAPIClone] [HikariPool-12 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-12 - Thread starvation or clock leap detected (housekeeper delta=22m34s911ms642µs700ns).
+2024-08-30T20:52:04.980+01:00  INFO 15112 --- [MonnifyAPIClone] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+2024-08-30T20:52:22.040+01:00  INFO 15112 --- [MonnifyAPIClone] [Thread-47] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30T20:52:22.048+01:00  INFO 15112 --- [MonnifyAPIClone] [Thread-47] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown initiated...
+2024-08-30T20:52:22.260+01:00  INFO 15112 --- [MonnifyAPIClone] [Thread-47] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown completed.
+2024-08-30T20:52:23.182+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Starting MonnifyApiCloneApplication using Java 17.0.9 with PID 15112 (C:\Users\Ayo\Projects\monnify_api_clone\target\classes started by Ayo in C:\Users\Ayo\Projects\monnify_api_clone)
+2024-08-30T20:52:23.182+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-30T20:52:27.705+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-30T20:52:27.816+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 1 JPA repository interface.
+2024-08-30T20:52:31.540+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8200 (http)
+2024-08-30T20:52:31.596+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-30T20:52:31.599+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-30T20:52:32.063+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-30T20:52:32.262+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9042 ms
+2024-08-30T20:52:33.212+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-30T20:52:33.221+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-30T20:52:33.406+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-30T20:52:33.523+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Starting...
+2024-08-30T20:52:34.279+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-13 - Added connection org.postgresql.jdbc.PgConnection@7ba28e77
+2024-08-30T20:52:34.280+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Start completed.
+2024-08-30T20:52:34.480+01:00  WARN 15112 --- [MonnifyAPIClone] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-30T20:52:35.077+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-30T20:52:35.126+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30T20:52:35.464+01:00  WARN 15112 --- [MonnifyAPIClone] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-30T20:52:35.824+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-30T20:52:35.824+01:00  WARN 15112 --- [MonnifyAPIClone] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-08-30T20:52:41.787+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-30T20:52:41.844+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8200 (http) with context path '/'
+2024-08-30T20:52:41.873+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Started MonnifyApiCloneApplication in 19.141 seconds (process running for 8715.748)
+2024-08-30T20:52:41.877+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-30T20:55:33.189+01:00  INFO 15112 --- [MonnifyAPIClone] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 23 class path changes (0 additions, 23 deletions, 0 modifications)
+2024-08-30T20:55:40.676+01:00  INFO 15112 --- [MonnifyAPIClone] [Thread-51] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30T20:55:40.705+01:00  INFO 15112 --- [MonnifyAPIClone] [Thread-51] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown initiated...
+2024-08-30T20:55:40.828+01:00  INFO 15112 --- [MonnifyAPIClone] [Thread-51] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown completed.
+2024-08-30T20:55:52.485+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Starting MonnifyApiCloneApplication using Java 17.0.9 with PID 15112 (C:\Users\Ayo\Projects\monnify_api_clone\target\classes started by Ayo in C:\Users\Ayo\Projects\monnify_api_clone)
+2024-08-30T20:55:52.488+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-30T20:55:53.306+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-30T20:55:53.378+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 1 JPA repository interface.
+2024-08-30T20:55:53.670+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8200 (http)
+2024-08-30T20:55:53.686+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-30T20:55:53.686+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-30T20:55:53.770+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-08-30T20:55:53.775+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1280 ms
+2024-08-30T20:55:53.923+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-30T20:55:53.931+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-30T20:55:53.964+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-30T20:55:53.980+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Starting...
+2024-08-30T20:55:54.146+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-14 - Added connection org.postgresql.jdbc.PgConnection@203581d6
+2024-08-30T20:55:54.148+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Start completed.
+2024-08-30T20:55:54.171+01:00  WARN 15112 --- [MonnifyAPIClone] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-30T20:55:54.382+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-30T20:55:54.431+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30T20:55:54.640+01:00  WARN 15112 --- [MonnifyAPIClone] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-30T20:55:54.812+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-30T20:55:54.817+01:00  WARN 15112 --- [MonnifyAPIClone] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-08-30T20:55:55.138+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-30T20:55:55.222+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8200 (http) with context path '/'
+2024-08-30T20:55:55.280+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Started MonnifyApiCloneApplication in 2.877 seconds (process running for 8909.156)
+2024-08-30T20:55:55.346+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-30T20:58:20.508+01:00  INFO 15112 --- [MonnifyAPIClone] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2024-08-30T20:58:24.681+01:00  INFO 15112 --- [MonnifyAPIClone] [Thread-55] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30T20:58:24.681+01:00  INFO 15112 --- [MonnifyAPIClone] [Thread-55] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown initiated...
+2024-08-30T20:58:24.792+01:00  INFO 15112 --- [MonnifyAPIClone] [Thread-55] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown completed.
+2024-08-30T20:58:25.490+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Starting MonnifyApiCloneApplication using Java 17.0.9 with PID 15112 (C:\Users\Ayo\Projects\monnify_api_clone\target\classes started by Ayo in C:\Users\Ayo\Projects\monnify_api_clone)
+2024-08-30T20:58:25.642+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-30T20:58:26.751+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-30T20:58:26.910+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 1 JPA repository interface.
+2024-08-30T20:58:27.546+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8200 (http)
+2024-08-30T20:58:27.567+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-30T20:58:27.596+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-30T20:58:27.724+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-08-30T20:58:27.743+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2078 ms
+2024-08-30T20:58:28.000+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-30T20:58:28.067+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-30T20:58:28.104+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-30T20:58:28.106+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Starting...
+2024-08-30T20:58:28.570+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-15 - Added connection org.postgresql.jdbc.PgConnection@b631bd6
+2024-08-30T20:58:28.600+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Start completed.
+2024-08-30T20:58:28.697+01:00  WARN 15112 --- [MonnifyAPIClone] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-30T20:58:29.105+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-30T20:58:29.252+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30T20:58:29.577+01:00  WARN 15112 --- [MonnifyAPIClone] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-30T20:58:30.186+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-08-30T20:58:30.340+01:00  WARN 15112 --- [MonnifyAPIClone] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-08-30T20:58:34.687+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-30T20:58:35.682+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8200 (http) with context path '/'
+2024-08-30T20:58:35.704+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Started MonnifyApiCloneApplication in 10.419 seconds (process running for 9069.579)
+2024-08-30T20:58:35.717+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-30T21:00:11.112+01:00  INFO 15112 --- [MonnifyAPIClone] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-30T21:00:21.924+01:00  INFO 15112 --- [MonnifyAPIClone] [Thread-62] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30T21:00:22.045+01:00  INFO 15112 --- [MonnifyAPIClone] [Thread-62] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown initiated...
+2024-08-30T21:00:22.119+01:00  INFO 15112 --- [MonnifyAPIClone] [Thread-62] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown completed.
+2024-08-30T21:00:22.928+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Starting MonnifyApiCloneApplication using Java 17.0.9 with PID 15112 (C:\Users\Ayo\Projects\monnify_api_clone\target\classes started by Ayo in C:\Users\Ayo\Projects\monnify_api_clone)
+2024-08-30T21:00:22.943+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-30T21:00:24.889+01:00  WARN 15112 --- [MonnifyAPIClone] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+2024-08-30T21:00:25.125+01:00  INFO 15112 --- [MonnifyAPIClone] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-30T21:00:25.134+01:00 ERROR 15112 --- [MonnifyAPIClone] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-3.3.3.jar:3.3.3]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:183) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:429) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:789) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:607) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.3.jar:3.3.3]
+	at com.ayo.monnify_api_clone.MonnifyApiCloneApplication.main(MonnifyApiCloneApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.3.jar:3.3.3]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.ayo.monnify_api_clone.config.RedisConfig] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@67186670]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.1.12.jar:6.1.12]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-6.1.12.jar:6.1.12]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$1(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-6.1.12.jar:6.1.12]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:682) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:653) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1687) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:562) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:534) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:247) ~[spring-boot-autoconfigure-3.3.3.jar:3.3.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:240) ~[spring-boot-autoconfigure-3.3.3.jar:3.3.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:230) ~[spring-boot-autoconfigure-3.3.3.jar:3.3.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:183) ~[spring-boot-autoconfigure-3.3.3.jar:3.3.3]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:158) ~[spring-boot-autoconfigure-3.3.3.jar:3.3.3]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-3.3.3.jar:3.3.3]
+	... 22 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/data/redis/connection/RedisConnectionFactory
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.1.12.jar:6.1.12]
+	... 38 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.data.redis.connection.RedisConnectionFactory
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.3.3.jar:3.3.3]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	... 42 common frames omitted
+
