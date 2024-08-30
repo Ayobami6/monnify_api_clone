@@ -59,3 +59,7 @@ info:
 dev:
     name: Ayobami
     email: ayobamidele006@gmail.com
+
+jwt:
+    secret: ${JWT_SECRET}
+    expiration: ${JWT_EXPIRATION}

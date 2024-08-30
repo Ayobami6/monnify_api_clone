@@ -133,3 +133,449 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'AD
 2024-08-30T07:47:57.375+01:00  INFO 8368 --- [MonnifyAPIClone] [http-nio-8200-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-08-30T07:47:57.383+01:00  INFO 8368 --- [MonnifyAPIClone] [http-nio-8200-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
 2024-08-30T07:48:14.322+01:00  WARN 8368 --- [MonnifyAPIClone] [http-nio-8200-exec-3] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [189] milliseconds.
+2024-08-30T07:54:54.080+01:00  INFO 8368 --- [MonnifyAPIClone] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2024-08-30T07:54:54.828+01:00  INFO 8368 --- [MonnifyAPIClone] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30T07:54:54.834+01:00  INFO 8368 --- [MonnifyAPIClone] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-30T07:54:54.845+01:00  INFO 8368 --- [MonnifyAPIClone] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-30T07:54:55.203+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Starting MonnifyApiCloneApplication using Java 17.0.9 with PID 8368 (C:\Users\Ayo\Projects\monnify_api_clone\target\classes started by Ayo in C:\Users\Ayo\Projects\monnify_api_clone)
+2024-08-30T07:54:55.210+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-30T07:54:56.073+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-30T07:54:56.203+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2024-08-30T07:54:56.713+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8200 (http)
+2024-08-30T07:54:56.713+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-30T07:54:56.713+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-30T07:54:56.778+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-08-30T07:54:56.778+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1515 ms
+2024-08-30T07:54:56.936+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-30T07:54:57.045+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-30T07:54:57.148+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-30T07:54:57.153+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-08-30T07:54:57.365+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@679d1be8
+2024-08-30T07:54:57.366+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-08-30T07:54:57.383+01:00  WARN 8368 --- [MonnifyAPIClone] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-30T07:54:57.428+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-30T07:54:57.438+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30T07:54:57.528+01:00  WARN 8368 --- [MonnifyAPIClone] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-30T07:54:57.913+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2024-08-30T07:54:58.028+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-30T07:54:58.143+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8200 (http) with context path '/api/v1'
+2024-08-30T07:54:58.188+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Started MonnifyApiCloneApplication in 3.194 seconds (process running for 453.633)
+2024-08-30T07:54:58.204+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-08-30T07:55:38.958+01:00  INFO 8368 --- [MonnifyAPIClone] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-08-30T07:55:39.806+01:00  INFO 8368 --- [MonnifyAPIClone] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-30T07:55:39.806+01:00  INFO 8368 --- [MonnifyAPIClone] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-08-30T07:55:39.823+01:00  INFO 8368 --- [MonnifyAPIClone] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-08-30T07:55:40.088+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Starting MonnifyApiCloneApplication using Java 17.0.9 with PID 8368 (C:\Users\Ayo\Projects\monnify_api_clone\target\classes started by Ayo in C:\Users\Ayo\Projects\monnify_api_clone)
+2024-08-30T07:55:40.093+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-30T07:55:41.168+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-30T07:55:41.185+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 JPA repository interfaces.
+2024-08-30T07:55:41.838+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8200 (http)
+2024-08-30T07:55:41.849+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-30T07:55:41.893+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-30T07:55:42.068+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-08-30T07:55:42.073+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1969 ms
+2024-08-30T07:55:42.316+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-30T07:55:42.338+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-30T07:55:42.363+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-30T07:55:42.374+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-08-30T07:55:42.463+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@5df1063e
+2024-08-30T07:55:42.466+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-08-30T07:55:42.484+01:00  WARN 8368 --- [MonnifyAPIClone] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-30T07:55:42.881+01:00 ERROR 8368 --- [MonnifyAPIClone] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-08-30T07:55:42.888+01:00  WARN 8368 --- [MonnifyAPIClone] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-08-30T07:55:42.893+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2024-08-30T07:55:42.950+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2024-08-30T07:55:42.953+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-30T07:55:42.965+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-30T07:55:43.008+01:00 ERROR 8368 --- [MonnifyAPIClone] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.3.jar:3.3.3]
+	at com.ayo.monnify_api_clone.MonnifyApiCloneApplication.main(MonnifyApiCloneApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.3.jar:3.3.3]
+Caused by: org.hibernate.AnnotationException: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.hibernate.boot.model.internal.InheritanceState.determineDefaultAccessType(InheritanceState.java:279) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.InheritanceState.getElementsToProcess(InheritanceState.java:215) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.InheritanceState.postProcess(InheritanceState.java:160) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:407) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:248) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:399) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:259) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:281) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:324) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.12.jar:6.1.12]
+	... 20 common frames omitted
+
+2024-08-30T07:56:21.625+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Starting MonnifyApiCloneApplication using Java 17.0.9 with PID 8368 (C:\Users\Ayo\Projects\monnify_api_clone\target\classes started by Ayo in C:\Users\Ayo\Projects\monnify_api_clone)
+2024-08-30T07:56:21.638+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-30T07:56:22.138+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-30T07:56:22.150+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2024-08-30T07:56:22.541+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8200 (http)
+2024-08-30T07:56:22.589+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-30T07:56:22.595+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-30T07:56:22.675+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-08-30T07:56:22.677+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1019 ms
+2024-08-30T07:56:22.766+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-30T07:56:22.778+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-30T07:56:22.823+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-30T07:56:22.828+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2024-08-30T07:56:22.928+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@3840ca1c
+2024-08-30T07:56:22.928+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2024-08-30T07:56:22.946+01:00  WARN 8368 --- [MonnifyAPIClone] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-30T07:56:22.953+01:00 ERROR 8368 --- [MonnifyAPIClone] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-08-30T07:56:22.953+01:00  WARN 8368 --- [MonnifyAPIClone] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-08-30T07:56:22.953+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2024-08-30T07:56:22.958+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2024-08-30T07:56:22.958+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-30T07:56:22.966+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-30T07:56:22.973+01:00 ERROR 8368 --- [MonnifyAPIClone] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.3.jar:3.3.3]
+	at com.ayo.monnify_api_clone.MonnifyApiCloneApplication.main(MonnifyApiCloneApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.3.jar:3.3.3]
+Caused by: org.hibernate.AnnotationException: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.hibernate.boot.model.internal.InheritanceState.determineDefaultAccessType(InheritanceState.java:279) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.InheritanceState.getElementsToProcess(InheritanceState.java:215) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.InheritanceState.postProcess(InheritanceState.java:160) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:407) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:248) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:399) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:259) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:281) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:324) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.12.jar:6.1.12]
+	... 20 common frames omitted
+
+2024-08-30T08:02:33.226+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Starting MonnifyApiCloneApplication using Java 17.0.9 with PID 8368 (C:\Users\Ayo\Projects\monnify_api_clone\target\classes started by Ayo in C:\Users\Ayo\Projects\monnify_api_clone)
+2024-08-30T08:02:33.240+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-30T08:02:34.489+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-30T08:02:34.588+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 0 JPA repository interfaces.
+2024-08-30T08:02:35.308+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8200 (http)
+2024-08-30T08:02:35.347+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-30T08:02:35.369+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-30T08:02:35.489+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-08-30T08:02:35.509+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2210 ms
+2024-08-30T08:02:37.008+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-30T08:02:37.013+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-30T08:02:37.032+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-30T08:02:37.035+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2024-08-30T08:02:37.304+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@503a2d0b
+2024-08-30T08:02:37.307+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2024-08-30T08:02:37.322+01:00  WARN 8368 --- [MonnifyAPIClone] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-30T08:02:37.336+01:00 ERROR 8368 --- [MonnifyAPIClone] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-08-30T08:02:37.336+01:00  WARN 8368 --- [MonnifyAPIClone] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-08-30T08:02:37.338+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2024-08-30T08:02:37.349+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2024-08-30T08:02:37.350+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-30T08:02:37.359+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-30T08:02:37.373+01:00 ERROR 8368 --- [MonnifyAPIClone] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.3.jar:3.3.3]
+	at com.ayo.monnify_api_clone.MonnifyApiCloneApplication.main(MonnifyApiCloneApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.3.jar:3.3.3]
+Caused by: org.hibernate.AnnotationException: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.hibernate.boot.model.internal.InheritanceState.determineDefaultAccessType(InheritanceState.java:279) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.InheritanceState.getElementsToProcess(InheritanceState.java:215) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.InheritanceState.postProcess(InheritanceState.java:160) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:407) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:248) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:399) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:259) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:281) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:324) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.12.jar:6.1.12]
+	... 20 common frames omitted
+
+2024-08-30T08:12:47.005+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Starting MonnifyApiCloneApplication using Java 17.0.9 with PID 8368 (C:\Users\Ayo\Projects\monnify_api_clone\target\classes started by Ayo in C:\Users\Ayo\Projects\monnify_api_clone)
+2024-08-30T08:12:47.007+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-30T08:12:47.489+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-30T08:12:47.548+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2024-08-30T08:12:47.934+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8200 (http)
+2024-08-30T08:12:47.937+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-30T08:12:47.992+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-30T08:12:48.098+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-08-30T08:12:48.098+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1088 ms
+2024-08-30T08:12:48.817+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-30T08:12:48.831+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-30T08:12:48.871+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-30T08:12:48.881+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2024-08-30T08:12:48.993+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@4830f158
+2024-08-30T08:12:48.994+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2024-08-30T08:12:49.008+01:00  WARN 8368 --- [MonnifyAPIClone] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-30T08:12:49.016+01:00 ERROR 8368 --- [MonnifyAPIClone] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-08-30T08:12:49.017+01:00  WARN 8368 --- [MonnifyAPIClone] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-08-30T08:12:49.018+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2024-08-30T08:12:49.043+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2024-08-30T08:12:49.044+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-30T08:12:49.057+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-30T08:12:49.063+01:00 ERROR 8368 --- [MonnifyAPIClone] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.3.jar:3.3.3]
+	at com.ayo.monnify_api_clone.MonnifyApiCloneApplication.main(MonnifyApiCloneApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.3.jar:3.3.3]
+Caused by: org.hibernate.AnnotationException: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.hibernate.boot.model.internal.InheritanceState.determineDefaultAccessType(InheritanceState.java:279) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.InheritanceState.getElementsToProcess(InheritanceState.java:215) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.InheritanceState.postProcess(InheritanceState.java:160) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:407) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:248) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:399) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:259) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:281) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:324) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.12.jar:6.1.12]
+	... 20 common frames omitted
+
+2024-08-30T08:12:53.724+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Starting MonnifyApiCloneApplication using Java 17.0.9 with PID 8368 (C:\Users\Ayo\Projects\monnify_api_clone\target\classes started by Ayo in C:\Users\Ayo\Projects\monnify_api_clone)
+2024-08-30T08:12:53.892+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-30T08:12:54.908+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-30T08:12:54.923+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2024-08-30T08:12:55.394+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8200 (http)
+2024-08-30T08:12:55.439+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-30T08:12:55.489+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-30T08:12:55.603+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-08-30T08:12:55.620+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1625 ms
+2024-08-30T08:12:56.692+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-30T08:12:56.697+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-30T08:12:56.827+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-30T08:12:56.828+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2024-08-30T08:12:57.064+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection org.postgresql.jdbc.PgConnection@15af552c
+2024-08-30T08:12:57.065+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2024-08-30T08:12:57.085+01:00  WARN 8368 --- [MonnifyAPIClone] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-30T08:12:57.091+01:00 ERROR 8368 --- [MonnifyAPIClone] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-08-30T08:12:57.092+01:00  WARN 8368 --- [MonnifyAPIClone] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-08-30T08:12:57.094+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2024-08-30T08:12:57.126+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2024-08-30T08:12:57.127+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-30T08:12:57.143+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-30T08:12:57.147+01:00 ERROR 8368 --- [MonnifyAPIClone] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.3.jar:3.3.3]
+	at com.ayo.monnify_api_clone.MonnifyApiCloneApplication.main(MonnifyApiCloneApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.3.jar:3.3.3]
+Caused by: org.hibernate.AnnotationException: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.hibernate.boot.model.internal.InheritanceState.determineDefaultAccessType(InheritanceState.java:279) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.InheritanceState.getElementsToProcess(InheritanceState.java:215) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.InheritanceState.postProcess(InheritanceState.java:160) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:407) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:248) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:399) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:259) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:281) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:324) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.12.jar:6.1.12]
+	... 20 common frames omitted
+
+2024-08-30T08:13:02.841+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : Starting MonnifyApiCloneApplication using Java 17.0.9 with PID 8368 (C:\Users\Ayo\Projects\monnify_api_clone\target\classes started by Ayo in C:\Users\Ayo\Projects\monnify_api_clone)
+2024-08-30T08:13:02.842+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] c.a.m.MonnifyApiCloneApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-08-30T08:13:03.102+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-30T08:13:03.103+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2024-08-30T08:13:03.263+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8200 (http)
+2024-08-30T08:13:03.268+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-30T08:13:03.268+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-30T08:13:03.318+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-08-30T08:13:03.318+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 470 ms
+2024-08-30T08:13:03.402+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-30T08:13:03.407+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-30T08:13:03.422+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-30T08:13:03.427+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2024-08-30T08:13:03.627+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection org.postgresql.jdbc.PgConnection@4647f3e0
+2024-08-30T08:13:03.633+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2024-08-30T08:13:03.654+01:00  WARN 8368 --- [MonnifyAPIClone] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-30T08:13:03.663+01:00 ERROR 8368 --- [MonnifyAPIClone] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-08-30T08:13:03.664+01:00  WARN 8368 --- [MonnifyAPIClone] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+2024-08-30T08:13:03.665+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2024-08-30T08:13:03.714+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+2024-08-30T08:13:03.714+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-08-30T08:13:03.724+01:00  INFO 8368 --- [MonnifyAPIClone] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-30T08:13:03.729+01:00 ERROR 8368 --- [MonnifyAPIClone] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.3.jar:3.3.3]
+	at com.ayo.monnify_api_clone.MonnifyApiCloneApplication.main(MonnifyApiCloneApplication.java:14) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.3.jar:3.3.3]
+Caused by: org.hibernate.AnnotationException: Entity 'com.ayo.monnify_api_clone.user.UserEntity' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
+	at org.hibernate.boot.model.internal.InheritanceState.determineDefaultAccessType(InheritanceState.java:279) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.InheritanceState.getElementsToProcess(InheritanceState.java:215) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.InheritanceState.postProcess(InheritanceState.java:160) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:407) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:248) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:399) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:259) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:281) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:324) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.12.jar:6.1.12]
+	... 20 common frames omitted
+
