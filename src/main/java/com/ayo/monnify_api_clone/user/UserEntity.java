@@ -13,6 +13,8 @@ import com.ayo.monnify_api_clone.utils.Utils;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -40,6 +42,8 @@ public class UserEntity implements UserDetails {
     private String email;
 
     @Builder.Default
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", columnDefinition = "Varchar(255)")
     private Role role = Role.USER;
     @Column(name = "contractCode", nullable = false,  updatable = false)
     private Long contractCode;
@@ -58,7 +62,12 @@ public class UserEntity implements UserDetails {
     private String walletBankName;
     private String walletAccountName;
 
+    @Column(name = "phoneNumber", unique = true)
+    private String phoneNumber;
+
     @Builder.Default
+    @Enumerated(EnumType.STRING)
+    @Column(name = "mode", columnDefinition = "Varchar(255)")
     private Mode mode = Mode.TEST;
     
     @Builder.Default
