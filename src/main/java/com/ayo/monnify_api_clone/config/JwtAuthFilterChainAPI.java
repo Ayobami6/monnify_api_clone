@@ -15,6 +15,9 @@ import org.springframework.web.servlet.HandlerExceptionResolver;
 
 import com.ayo.monnify_api_clone.auth.AuthenticationException;
 import com.ayo.monnify_api_clone.auth.JwtService;
+import com.ayo.monnify_api_clone.exception.ServiceException;
+import com.ayo.monnify_api_clone.user.UserEntity;
+import com.ayo.monnify_api_clone.user.UserService;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
@@ -32,12 +35,14 @@ public class JwtAuthFilterChainAPI extends OncePerRequestFilter {
     private JwtService jwtService;
     private UserDetailsService userDetailsService;
     private HandlerExceptionResolver handlerExceptionResolver;
+    private UserService userService;
 
     // inject all dependencies 
-    public JwtAuthFilterChainAPI(JwtService jwtService, @Qualifier("userDetailsServiceAPI") UserDetailsService userDetailsService, HandlerExceptionResolver handlerExceptionResolver) {
+    public JwtAuthFilterChainAPI(JwtService jwtService, @Qualifier("userDetailsServiceAPI") UserDetailsService userDetailsService, HandlerExceptionResolver handlerExceptionResolver, UserService userService) {
         this.jwtService = jwtService;
         this.userDetailsService = userDetailsService;
         this.handlerExceptionResolver = handlerExceptionResolver;
+        this.userService = userService;
 
     }
 
@@ -51,8 +56,10 @@ public class JwtAuthFilterChainAPI extends OncePerRequestFilter {
                     final String authHeader = request.getHeader("Authorization");
                     final String jwt;
                     final String userApiKey;
-                    if (request.getRequestURI().startsWith("/api/v1")) {
+                    System.out.println("Hey here");
+                    
                         if (authHeader == null || !authHeader.startsWith("Bearer ")){
+                            System.out.println("Got here!");
                             filterChain.doFilter(request, response);
                             return;
                         }
@@ -60,7 +67,8 @@ public class JwtAuthFilterChainAPI extends OncePerRequestFilter {
                         userApiKey = jwtService.getUserApiKey(jwt);
                         if (userApiKey != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                             UserDetails userDetails = userDetailsService.loadUserByUsername(userApiKey);
-                            if (jwtService.validateToken(jwt, userDetails)) {
+                            UserEntity user = userService.getUserByEmail(userDetails.getUsername());
+                            if (jwtService.validateTokenAPI(jwt, user)) {
                                 UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
                                     userDetails, 
                                     null, 
@@ -72,10 +80,10 @@ public class JwtAuthFilterChainAPI extends OncePerRequestFilter {
                                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
                             }
                         }
-                    }
                     filterChain.doFilter(request, response);
 
                 } catch (ExpiredJwtException e) { 
+                    e.printStackTrace();
                     handlerExceptionResolver.resolveException(request, response, null, new AuthenticationException("Token Expired"));
                 } catch (UnsupportedJwtException e) {
                     handlerExceptionResolver.resolveException(request, response, null, new AuthenticationException("Token Unsupported"));
@@ -86,6 +94,9 @@ public class JwtAuthFilterChainAPI extends OncePerRequestFilter {
                 } catch (IllegalArgumentException e) {
                     e.printStackTrace();
                     handlerExceptionResolver.resolveException(request, response, null, new AuthenticationException("Token not found"));
+                } catch (ServiceException e) {
+                    handlerExceptionResolver.resolveException(request, response, null, new AuthenticationException(e.getMessage()));
+                    e.printStackTrace();
                 } 
         
     }

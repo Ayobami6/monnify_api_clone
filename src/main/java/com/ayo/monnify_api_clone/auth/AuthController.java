@@ -82,7 +82,15 @@ public class AuthController {
         return "Message sent to RabbitMQ successfully";
         
     }
-    
-    
+
+    @GetMapping("/api/v1/test")
+    public String testAPiAuth() {
+        return new String("Test API authentication");
+    }
+
+    @GetMapping("/merchants/test")
+    public String testMerchants() {
+        return new String("Test Merchant authentication");
+    }
 
 }

@@ -43,11 +43,11 @@ public class JwtService {
     }
 
     public String generateToken(
-        Map<String, Object>extractClaims,
+        Map<String, Object>extraClaims,
         UserDetails userDetails
     ) {
         return Jwts.builder()
-                .setClaims(extractClaims)
+                .setClaims(extraClaims)
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + Long.parseLong(expiration)))
@@ -57,11 +57,11 @@ public class JwtService {
     }
 
     public String generateTokenAPI(
-        Map<String, Object>extractClaims,
+        Map<String, Object>extraClaim,
         UserEntity user
     ) {
         return Jwts.builder()
-                .setClaims(extractClaims)
+                .setClaims(extraClaim)
                 .setSubject(user.getApiKey())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + Long.parseLong(expiration)))
@@ -72,13 +72,13 @@ public class JwtService {
 
     // get user apikey from claim
     public String getUserApiKey(String token) {
-        return extractClaims(token, Claims::getSubject);
+        return extractClaim(token, Claims::getSubject);
     }
     public String getUserEmail(String token) {
-        return extractClaims(token, Claims::getSubject);
+        return extractClaim(token, Claims::getSubject);
     }
 
-    public <T> T extractClaims(String token, Function<Claims, T> claimsResolver) {
+    public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
         return claimsResolver.apply(extractAllClaims(token));
     }
 
@@ -94,11 +94,11 @@ public class JwtService {
         return getUserEmail(token).equals(userDetails.getUsername()) && !isTokenExpired(token);
     }
     public boolean validateTokenAPI(String token, UserEntity user) {
-        return getUserApiKey(token).equals(user.getApiKey()) &&!isTokenExpired(token);
+        return getUserApiKey(token).equals(user.getApiKey()) && !isTokenExpired(token);
     }
 
     public boolean isTokenExpired(String token) {
-        return extractClaims(token, Claims::getExpiration).before(new Date());
+        return extractClaim(token, Claims::getExpiration).before(new Date());
     }
 
 }

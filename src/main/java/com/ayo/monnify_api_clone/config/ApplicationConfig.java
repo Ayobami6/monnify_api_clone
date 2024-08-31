@@ -36,8 +36,13 @@ public class ApplicationConfig {
 
     @Bean
     public UserDetailsService userDetailsServiceAPI() {
-        return username -> userRepository.findByApiKey(username)
-            .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        return new UserDetailsService() {
+        @Override
+        public UserEntity loadUserByUsername(String username) throws UsernameNotFoundException {
+            return userRepository.findByApiKey(username)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found with API key: " + username));
+        }
+    };
     }
     @Bean
     public AuthenticationProvider authenticationProvider() {
