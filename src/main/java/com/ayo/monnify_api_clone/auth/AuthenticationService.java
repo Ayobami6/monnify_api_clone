@@ -1,15 +1,20 @@
 package com.ayo.monnify_api_clone.auth;
 
 import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.ayo.monnify_api_clone.amqp.RabbitMqService;
 import com.ayo.monnify_api_clone.auth.dto.AuthResponseDto;
 import com.ayo.monnify_api_clone.auth.dto.LoginDto;
 import com.ayo.monnify_api_clone.auth.dto.RegisterDto;
@@ -17,6 +22,7 @@ import com.ayo.monnify_api_clone.exception.InternalServerException;
 import com.ayo.monnify_api_clone.exception.ServiceException;
 import com.ayo.monnify_api_clone.user.UserEntity;
 import com.ayo.monnify_api_clone.user.UserRepository;
+import com.ayo.monnify_api_clone.utils.Utils;
 
 import lombok.RequiredArgsConstructor;
 
@@ -29,6 +35,8 @@ public class AuthenticationService {
     private final UserRepository userRepository;
     private final AuthenticationManager authenticationManager;
     private final PasswordEncoder passwordEncoder;
+    private final RedisTemplate<String, Object> redisTemplate;
+    private final RabbitMqService rabbitMqService;
 
     @Value("${jwt.expiration}")
     private Long jwtExpiry;
@@ -49,6 +57,16 @@ public class AuthenticationService {
             userRepository.save(user);
     
             // TODO: implement generate otp and sent to email for verification
+            // gernarate otp
+            String otp = Utils.generateRandomOTP();
+            // cache the otp with the user email as key
+            redisTemplate.opsForValue().set(user.getEmail(), otp, 15, TimeUnit.MINUTES);
+            // create a new map payload  to be sent to rabbit queue
+            Map<String, String> payload = new HashMap<>();
+            payload.put("email", user.getEmail());
+            payload.put("otp", otp);
+            // send payload to rabbit queue
+            rabbitMqService.sendMessageToMailQueue(payload);
             // generate token
             token = jwtService.generateToken(user);
             

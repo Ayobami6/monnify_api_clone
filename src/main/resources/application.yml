@@ -30,6 +30,20 @@ spring:
         username: guest
         password: guest
 
+    mail:
+        host: smtp.gmail.com
+        port: 465
+        username: ${EMAIL_USER}
+        password: ${EMAIL_PASSWD}
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    ssl:
+                        enable: true
+                    starttls:
+                        enable: false
+
     security:
         user:
             name: ${ADMIN_USERNAME}
