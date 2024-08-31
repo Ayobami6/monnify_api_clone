@@ -92,7 +92,7 @@ public class AuthenticationService {
         String apiKey = parts[0];
         UserEntity user = userRepository.findByApiKey(apiKey).orElseThrow(() -> new AuthenticationException("User not found"));
         
-        String newToken = jwtService.generateToken(user);
+        String newToken = jwtService.generateTokenAPI(user);
             return AuthResponseDto.builder()
                 .accessToken(newToken)
                 .expiresIn(jwtExpiry)

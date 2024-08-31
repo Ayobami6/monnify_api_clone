@@ -86,7 +86,7 @@ public class JwtService {
         return generateToken(new HashMap<>(), userDetails);
     }
 
-    public String getTokenAPI(UserEntity user) {
+    public String generateTokenAPI(UserEntity user) {
         return generateTokenAPI(new HashMap<>(), user);
     }
 
