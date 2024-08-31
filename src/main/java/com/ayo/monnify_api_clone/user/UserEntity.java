@@ -69,6 +69,8 @@ public class UserEntity implements UserDetails {
     @Enumerated(EnumType.STRING)
     @Column(name = "mode", columnDefinition = "Varchar(255)")
     private Mode mode = Mode.TEST;
+
+    private String password;
     
     @Builder.Default
     @Column(name = "verified", nullable = false)
@@ -97,7 +99,7 @@ public class UserEntity implements UserDetails {
     @PreUpdate
     protected void update() {
         this.updatedAt = LocalDateTime.now();
-        if (mode == Mode.TEST) {
+        if (mode == Mode.PROD) {
             this.apiKey = "MK_PROD_" + UUID.randomUUID().toString().replace("-", "").substring(0, 10).toUpperCase();
         }
     }
@@ -145,12 +147,12 @@ public class UserEntity implements UserDetails {
 
     @Override
     public String getPassword() {
-        return secretKey;
+        return password;
     }
 
     @Override
     public String getUsername() {
-        return apiKey;
+        return email;
     }
 
 }

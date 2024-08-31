@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import com.ayo.monnify_api_clone.user.UserEntity;
+
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
@@ -54,8 +56,25 @@ public class JwtService {
 
     }
 
+    public String generateTokenAPI(
+        Map<String, Object>extractClaims,
+        UserEntity user
+    ) {
+        return Jwts.builder()
+                .setClaims(extractClaims)
+                .setSubject(user.getApiKey())
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + Long.parseLong(expiration)))
+                .signWith(getSigningKey())
+                .compact();
+
+    }
+
     // get user apikey from claim
     public String getUserApiKey(String token) {
+        return extractClaims(token, Claims::getSubject);
+    }
+    public String getUserEmail(String token) {
         return extractClaims(token, Claims::getSubject);
     }
 
@@ -67,8 +86,15 @@ public class JwtService {
         return generateToken(new HashMap<>(), userDetails);
     }
 
+    public String getTokenAPI(UserEntity user) {
+        return generateTokenAPI(new HashMap<>(), user);
+    }
+
     public boolean validateToken(String token, UserDetails userDetails) {
-        return getUserApiKey(token).equals(userDetails.getUsername()) && !isTokenExpired(token);
+        return getUserEmail(token).equals(userDetails.getUsername()) && !isTokenExpired(token);
+    }
+    public boolean validateTokenAPI(String token, UserEntity user) {
+        return getUserApiKey(token).equals(user.getApiKey()) &&!isTokenExpired(token);
     }
 
     public boolean isTokenExpired(String token) {

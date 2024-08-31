@@ -41,8 +41,6 @@ server:
     port: 8200
     error:
         include-stacktrace: always
-    servlet:
-        context-path: /api/v1
 
 
 logging:

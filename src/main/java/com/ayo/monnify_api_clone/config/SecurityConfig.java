@@ -19,6 +19,7 @@ public class SecurityConfig {
     // Inject all dependency
     private final AuthenticationProvider authenticationProvider;
     private final JwtAuthenticationFilterChain jwtAuthFilter;
+    private final JwtAuthFilterChainAPI jwtAuthFilterChainAPI;
 
 
     @Bean
@@ -26,14 +27,16 @@ public class SecurityConfig {
         http
             .csrf().disable()
             .authorizeRequests()
-            .requestMatchers("/auth/**", "/auth/**/*").permitAll()
-            .anyRequest().authenticated()
+            .requestMatchers("/api/v1/auth/**", "/api/v1/auth/**", "/auth/**").permitAll()
+            .requestMatchers("/merchants/**").authenticated()
+            .requestMatchers("/api/v1/**").authenticated()
             .and()
             .sessionManagement()
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
             .authenticationProvider(authenticationProvider)
-            .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+            .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+            .addFilterBefore(jwtAuthFilterChainAPI, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }

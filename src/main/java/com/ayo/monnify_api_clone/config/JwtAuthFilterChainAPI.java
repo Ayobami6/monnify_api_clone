@@ -2,9 +2,9 @@ package com.ayo.monnify_api_clone.config;
 
 import java.io.IOException;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -26,14 +26,15 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Component
-public class JwtAuthenticationFilterChain extends OncePerRequestFilter {
+public class JwtAuthFilterChainAPI extends OncePerRequestFilter {
+
 
     private JwtService jwtService;
     private UserDetailsService userDetailsService;
     private HandlerExceptionResolver handlerExceptionResolver;
 
     // inject all dependencies 
-    public JwtAuthenticationFilterChain(JwtService jwtService, UserDetailsService userDetailsService, HandlerExceptionResolver handlerExceptionResolver) {
+    public JwtAuthFilterChainAPI(JwtService jwtService, @Qualifier("userDetailsServiceAPI") UserDetailsService userDetailsService, HandlerExceptionResolver handlerExceptionResolver) {
         this.jwtService = jwtService;
         this.userDetailsService = userDetailsService;
         this.handlerExceptionResolver = handlerExceptionResolver;
@@ -49,16 +50,16 @@ public class JwtAuthenticationFilterChain extends OncePerRequestFilter {
                 try {
                     final String authHeader = request.getHeader("Authorization");
                     final String jwt;
-                    final String userEmail;
-                    if (request.getRequestURI().startsWith("/merchants")) {
+                    final String userApiKey;
+                    if (request.getRequestURI().startsWith("/api/v1")) {
                         if (authHeader == null || !authHeader.startsWith("Bearer ")){
                             filterChain.doFilter(request, response);
                             return;
                         }
                         jwt = authHeader.substring(7);
-                        userEmail = jwtService.getUserEmail(jwt);
-                        if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-                            UserDetails userDetails = userDetailsService.loadUserByUsername(userEmail);
+                        userApiKey = jwtService.getUserApiKey(jwt);
+                        if (userApiKey != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+                            UserDetails userDetails = userDetailsService.loadUserByUsername(userApiKey);
                             if (jwtService.validateToken(jwt, userDetails)) {
                                 UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
                                     userDetails, 
@@ -72,7 +73,6 @@ public class JwtAuthenticationFilterChain extends OncePerRequestFilter {
                             }
                         }
                     }
-                    
                     filterChain.doFilter(request, response);
 
                 } catch (ExpiredJwtException e) { 
@@ -89,6 +89,5 @@ public class JwtAuthenticationFilterChain extends OncePerRequestFilter {
                 } 
         
     }
-
 
 }
