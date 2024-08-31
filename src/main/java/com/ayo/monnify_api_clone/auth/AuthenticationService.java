@@ -56,6 +56,7 @@ public class AuthenticationService {
         } catch (DataIntegrityViolationException e) {
             throw new ServiceException(400, "Email already exists");
         } catch (Exception e) {
+            e.printStackTrace();
             throw new InternalServerException();
 
         }
