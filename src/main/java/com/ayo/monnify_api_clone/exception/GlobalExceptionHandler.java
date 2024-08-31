@@ -12,6 +12,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(AuthenticationException.class)
     public ResponseEntity<ApiResponse>handleAuthenticationException(AuthenticationException exc){
+        exc.printStackTrace();
         ApiResponse apiResponse = ApiResponse.builder()
                 .requestSuccessful(false)
                 .responseCode("99")

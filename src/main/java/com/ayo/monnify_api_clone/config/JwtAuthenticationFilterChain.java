@@ -82,6 +82,7 @@ public class JwtAuthenticationFilterChain extends OncePerRequestFilter {
                 } catch (SignatureException e) {
                     handlerExceptionResolver.resolveException(request, response, null, new AuthenticationException("Invalid Signature"));
                 } catch (IllegalArgumentException e) {
+                    e.printStackTrace();
                     handlerExceptionResolver.resolveException(request, response, null, new AuthenticationException("Token not found"));
                 } 
         

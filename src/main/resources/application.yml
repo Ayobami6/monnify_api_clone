@@ -20,8 +20,9 @@ spring:
         database-platform: org.hibernate.dialect.PostgreSQLDialect
 
     redis:
-        host: localhost
-        port: 6379
+        data:
+            host: localhost
+            port: 6379
 
     rabbitmq:
         host: localhost
@@ -40,6 +41,8 @@ server:
     port: 8200
     error:
         include-stacktrace: always
+    servlet:
+        context-path: /api/v1
 
 
 logging:
