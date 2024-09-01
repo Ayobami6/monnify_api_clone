@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  redis:
+    container_name: redis
+    image: redis:alpine
+    restart: always
+    ports:
+      -"6379:6379"
+    volumes:
+      -./:redis/
+    
+  rabbit:
+    container_name: rabbit
+    image: rabbitmq:management-alpine
+    restart: always
+    ports:
+    - "5672:5672"
+    - "15672:15672"
