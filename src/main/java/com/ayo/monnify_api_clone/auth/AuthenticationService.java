@@ -17,6 +17,8 @@ import org.springframework.stereotype.Service;
 import com.ayo.monnify_api_clone.amqp.RabbitMqService;
 import com.ayo.monnify_api_clone.auth.dto.AuthResponseDto;
 import com.ayo.monnify_api_clone.auth.dto.LoginDto;
+import com.ayo.monnify_api_clone.auth.dto.OTPResponseDTO;
+import com.ayo.monnify_api_clone.auth.dto.OTPVerifyDTO;
 import com.ayo.monnify_api_clone.auth.dto.RegisterDto;
 import com.ayo.monnify_api_clone.exception.InternalServerException;
 import com.ayo.monnify_api_clone.exception.ServiceException;
@@ -73,10 +75,6 @@ public class AuthenticationService {
             
         } catch (DataIntegrityViolationException e) {
             throw new ServiceException(400, "Email already exists");
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new InternalServerException();
-
         }
         return AuthResponseDto.builder()
                             .accessToken(token)
@@ -116,9 +114,45 @@ public class AuthenticationService {
                 .accessToken(newToken)
                 .expiresIn(jwtExpiry)
                 .build();
-        }
-        
+    }
+
+    // verify otp 
+    public String verifyOTP(OTPVerifyDTO pl) {
+            String otp = (String) redisTemplate.opsForValue().get(pl.getEmail());
+            if (otp == null) {
+                throw new ServiceException(400, "OTP not found");
+            }
+            // validate the otp
+            if (pl.getOtp().equals(otp)) {
+                throw new ServiceException(400, "Invalid OTP");
+            }
+            // update user's verification status
+            UserEntity user = userRepository.findByEmail(pl.getEmail()).orElseThrow(() -> new AuthenticationException("User with the Email not found"));
+            user.setVerified(true);
+            userRepository.save(user);
+            // remove otp from redis
+            redisTemplate.delete(pl.getEmail());
+            return "OTP verified successfully";
+            
+    }
 
 
-
+    public OTPResponseDTO resendOtp(String email) {
+        // find user by email
+        UserEntity user = userRepository.findByEmail(email).orElseThrow(() -> new ServiceException(400, "User not found"));
+        // generate new otp
+        String otp = Utils.generateRandomOTP();
+        // cache the otp with the user email as key
+        redisTemplate.opsForValue().set(user.getEmail(), otp, 15, TimeUnit.MINUTES);
+        // create a new map payload  to be sent to rabbit queue
+        Map<String, String> payload = new HashMap<>();
+        payload.put("email", user.getEmail());
+        payload.put("otp", otp);
+        // send payload to rabbit queue
+        rabbitMqService.sendMessageToMailQueue(payload);
+        return OTPResponseDTO.builder()
+                        .otp(otp)
+                        .build();
+    }
+    
 }

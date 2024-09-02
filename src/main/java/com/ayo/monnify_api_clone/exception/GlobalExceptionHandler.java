@@ -45,6 +45,30 @@ public class GlobalExceptionHandler {
                 .build();
         return ResponseEntity.status(exc.getStatusCode()).body(apiResponse);
     }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ApiResponse> handleOtherException(Exception exc){
+        exc.printStackTrace();
+        ApiResponse apiResponse = ApiResponse.builder()
+                .requestSuccessful(false)
+                .responseCode("99")
+                .responseMessage("Don't fret this is from our end")
+                .responseBody("")
+                .build();
+        return ResponseEntity.status(500).body(apiResponse);
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<ApiResponse> handleRuntimeException(RuntimeException exc){
+        exc.printStackTrace();
+        ApiResponse apiResponse = ApiResponse.builder()
+                .requestSuccessful(false)
+                .responseCode("99")
+                .responseMessage("Don't fret this is from our end")
+                .responseBody("")
+                .build();
+        return ResponseEntity.status(500).body(apiResponse);
+    }
     
 
 }

@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ayo.monnify_api_clone.amqp.RabbitMqService;
 import com.ayo.monnify_api_clone.auth.dto.AuthResponseDto;
 import com.ayo.monnify_api_clone.auth.dto.LoginDto;
+import com.ayo.monnify_api_clone.auth.dto.OTPResponseDTO;
+import com.ayo.monnify_api_clone.auth.dto.OTPVerifyDTO;
 import com.ayo.monnify_api_clone.auth.dto.RegisterDto;
 import com.ayo.monnify_api_clone.utils.ApiResponse;
 
@@ -13,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +24,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequiredArgsConstructor
-
 public class AuthController {
 
     private final AuthenticationService authenticationService;
@@ -74,8 +76,36 @@ public class AuthController {
                                     .build();
         return ResponseEntity.status(200).body(apiResponse);
     }
-    
 
+    // verify otp
+    @PostMapping("/auth/verify-otp")
+    public ResponseEntity<ApiResponse> verifyOtp(@RequestBody OTPVerifyDTO pl) {
+        String message = authenticationService.verifyOTP(pl);
+
+        ApiResponse res = ApiResponse.builder()
+                            .requestSuccessful(true)
+                            .responseCode("0")
+                            .responseMessage(message)
+                            .responseBody("")
+                            .build();                   
+        return ResponseEntity.status(200).body(res);
+        
+    }
+
+
+    // resendOtp
+    @GetMapping("/auth/resend-otp/{email}")
+    public ResponseEntity<ApiResponse> resendOtp(@PathVariable("email") String email) {
+        OTPResponseDTO otpResponseDto = authenticationService.resendOtp(email);
+        ApiResponse apiResponse = ApiResponse.builder()
+                                    .requestSuccessful(true)
+                                    .responseCode("0")
+                                    .responseMessage("OTP sent successfully")
+                                    .responseBody(otpResponseDto)
+                                    .build();
+        return ResponseEntity.status(200).body(apiResponse);
+    }
+    
     @GetMapping("/test")
     public String testRabbit(@RequestParam String message) {
         rabbitMqService.sendMessageToMailQueue(message);
