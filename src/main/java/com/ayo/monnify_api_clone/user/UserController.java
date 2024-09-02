@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ayo.monnify_api_clone.user.dto.ApiKeyGetResponseDto;
+import com.ayo.monnify_api_clone.user.dto.ApiKeysResponseDto;
+import com.ayo.monnify_api_clone.user.dto.GetApiKeysDto;
 import com.ayo.monnify_api_clone.utils.ApiResponse;
 
 import lombok.RequiredArgsConstructor;
@@ -13,6 +15,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -50,6 +53,19 @@ public class UserController {
                         .responseMessage("Unauthorized")
                         .responseBody(null)
                         .build());
+    }
+
+    @PostMapping("api-keys")
+    public ResponseEntity<ApiResponse> createApiKey(@RequestBody GetApiKeysDto pl) {
+        ApiKeysResponseDto resp = userService.getUserAPIKey(pl);
+        ApiResponse response = ApiResponse.builder()
+                                        .requestSuccessful(true)
+                                        .responseCode("0")
+                                        .responseMessage("success")
+                                        .responseBody(resp)
+                                        .build();
+        return ResponseEntity.status(200).body(response);
+
     }
     
 
