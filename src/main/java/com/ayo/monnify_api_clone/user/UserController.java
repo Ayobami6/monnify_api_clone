@@ -29,7 +29,7 @@ public class UserController {
 
 
     @GetMapping("api-keys")
-    public ResponseEntity<ApiResponse> getApiKeys(@RequestBody String param) {
+    public ResponseEntity<ApiResponse> getApiKeys() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         if (authentication != null && authentication.isAuthenticated()) {
