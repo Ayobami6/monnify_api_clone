@@ -93,7 +93,7 @@ public class UserEntity implements UserDetails {
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
         this.walletBankName = "WEMA";
-        this.walletAccountName = this.getFirstName() + " " + this.getLastName();
+        this.walletAccountName = this.firstName + " " + this.lastName;
     }
 
     @PreUpdate
