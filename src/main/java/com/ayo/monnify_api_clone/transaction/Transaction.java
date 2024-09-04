@@ -3,6 +3,8 @@ package com.ayo.monnify_api_clone.transaction;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.ayo.monnify_api_clone.utils.Utils;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -68,6 +70,13 @@ public class Transaction {
     @PrePersist
     public void prePersist() {
         this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+        this.transactionReference = Utils.generateTransactionRef();
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        this.updatedAt = LocalDateTime.now();
     }
 
 }

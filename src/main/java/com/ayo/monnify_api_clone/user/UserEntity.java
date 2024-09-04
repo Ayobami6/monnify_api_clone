@@ -108,6 +108,10 @@ public class UserEntity implements UserDetails {
         this.walletBalance += amount;
     }
 
+    public String getMerchantName() {
+        return firstName + " " + lastName;
+    }
+
     public void withdraw(float amount) {
         if (this.walletBalance >= amount) {
             this.walletBalance -= amount;
