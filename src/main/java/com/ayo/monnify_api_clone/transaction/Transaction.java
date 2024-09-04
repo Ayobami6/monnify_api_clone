@@ -23,11 +23,11 @@ public class Transaction {
     private Long Id;
 
     @Column(name = "contract_code", nullable = false, updatable = false)
-    private Long contractCode;
+    private String contractCode;
 
     private String transactionReference;
 
-    private String amount;
+    private Float amount;
 
     private String customerName;
     private String customerEmail;
@@ -35,6 +35,7 @@ public class Transaction {
     private String paymentDescription;
     private String currencyCode;
     private String redirectUrl;
+
     private List<String> paymentMethods;
 
     @Builder.Default
@@ -64,8 +65,6 @@ public class Transaction {
     @Enumerated(EnumType.STRING)
     @Column(name = "payment_method", columnDefinition = "Varchar(255)")
     private PaymentMethod paymentMethod = PaymentMethod.CARD;
-
-
 
     @PrePersist
     public void prePersist() {
