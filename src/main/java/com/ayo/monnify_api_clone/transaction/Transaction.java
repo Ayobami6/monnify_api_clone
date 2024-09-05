@@ -27,7 +27,7 @@ public class Transaction {
 
     private String transactionReference;
 
-    private Float amount;
+    private String amount;
 
     private String customerName;
     private String customerEmail;
@@ -35,6 +35,7 @@ public class Transaction {
     private String paymentDescription;
     private String currencyCode;
     private String redirectUrl;
+    private String fee;
 
     private List<String> paymentMethods;
 
@@ -52,9 +53,10 @@ public class Transaction {
     private Boolean completed = false;
 
 
+    @Builder.Default
     @Enumerated(EnumType.STRING)
     @Column(name = "payment_status", columnDefinition = "Varchar(255)")
-    private Status paymentStatus;
+    private Status paymentStatus = Status.PENDING;
 
 
     @Column(name = "createdAt", nullable = false, updatable = false)

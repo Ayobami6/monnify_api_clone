@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class InitializeTransactionDto {
 
     @NotEmpty
-    private Float amount;
+    private String amount;
 
     @NotEmpty
     private String customerName;
@@ -39,5 +39,4 @@ public class InitializeTransactionDto {
 
     @NotEmpty
     private List<String> paymentMethods;
-
 }

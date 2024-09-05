@@ -1,5 +1,6 @@
 package com.ayo.monnify_api_clone.transaction;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.ayo.monnify_api_clone.exception.ServiceException;
@@ -11,7 +12,7 @@ import com.ayo.monnify_api_clone.user.UserRepository;
 import lombok.AllArgsConstructor;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class TransactionService {
 
     // dependencies
