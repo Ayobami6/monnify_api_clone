@@ -5,20 +5,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ayo.monnify_api_clone.transaction.dto.BankTransferDto;
+import com.ayo.monnify_api_clone.transaction.dto.BankTransferInitResponseDto;
 import com.ayo.monnify_api_clone.transaction.dto.InitTransactionResponseDto;
 import com.ayo.monnify_api_clone.transaction.dto.InitializeTransactionDto;
 import com.ayo.monnify_api_clone.utils.ApiResponse;
+import com.ayo.monnify_api_clone.utils.ApiResponseMapper;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
 @RestController
-@RequestMapping("/api/v1/merchants")
+@RequestMapping("/api/v1/merchant")
 @RequiredArgsConstructor
 public class TransactionController {
 
     private final TransactionService transactionService;
+    private final ApiResponseMapper apiResponseMapper;
 
 
     @PostMapping("transaction/init-transaction")
@@ -35,5 +39,14 @@ public class TransactionController {
         return ResponseEntity.status(200).body(response);
 
     }
+
+    @PostMapping("/bank-transfer/init-payment")
+    public ResponseEntity<ApiResponse>bankTransfer(@RequestBody BankTransferDto pl) {
+        BankTransferInitResponseDto res = transactionService.initializeBankTransfer(pl);
+
+        ApiResponse response = apiResponseMapper.mapDataToResponse(res);
+        return ResponseEntity.status(200).body(response);
+    }
+    
 
 }

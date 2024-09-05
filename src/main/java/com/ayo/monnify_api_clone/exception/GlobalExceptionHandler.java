@@ -1,6 +1,7 @@
 package com.ayo.monnify_api_clone.exception;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
@@ -81,6 +82,19 @@ public class GlobalExceptionHandler {
                 .responseBody("")
                 .build();
         return ResponseEntity.status(500).body(apiResponse);
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<ApiResponse> handleEmptyRequestBodyException(HttpMessageNotReadableException exc) {
+        exc.printStackTrace();
+        ApiResponse apiResponse = ApiResponse.builder()
+                .requestSuccessful(false)
+                .responseCode("99")
+                .responseMessage("Required Request Payload and none was sent!")
+                .responseBody("")
+                .build();
+        return ResponseEntity.status(400).body(apiResponse);
+
     }
     
 
