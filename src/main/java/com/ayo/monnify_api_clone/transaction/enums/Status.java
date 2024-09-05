@@ -1,4 +1,4 @@
-package com.ayo.monnify_api_clone.transaction;
+package com.ayo.monnify_api_clone.transaction.enums;
 
 public enum Status {
     PAID,
