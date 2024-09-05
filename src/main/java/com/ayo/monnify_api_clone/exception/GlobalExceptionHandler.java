@@ -3,6 +3,7 @@ package com.ayo.monnify_api_clone.exception;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 import com.ayo.monnify_api_clone.auth.AuthenticationException;
 import com.ayo.monnify_api_clone.utils.ApiResponse;
@@ -44,6 +45,18 @@ public class GlobalExceptionHandler {
                 .responseBody("")
                 .build();
         return ResponseEntity.status(exc.getStatusCode()).body(apiResponse);
+    }
+
+    @ExceptionHandler(NoResourceFoundException.class)
+    public ResponseEntity<ApiResponse> handleNoResourceFoundException(NoResourceFoundException exc){
+        exc.printStackTrace();
+        ApiResponse apiResponse = ApiResponse.builder()
+                .requestSuccessful(false)
+                .responseCode("99")
+                .responseMessage("Resource not found")
+                .responseBody("")
+                .build();
+        return ResponseEntity.status(404).body(apiResponse);
     }
 
     @ExceptionHandler(Exception.class)
