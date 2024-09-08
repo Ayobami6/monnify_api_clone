@@ -8,10 +8,13 @@ import lombok.RequiredArgsConstructor;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +24,7 @@ import com.ayo.monnify_api_clone.exception.ServiceException;
 import com.ayo.monnify_api_clone.user.UserEntity;
 import com.ayo.monnify_api_clone.user.UserRepository;
 import com.ayo.monnify_api_clone.utils.Utils;
+import java.util.stream.Collectors;
 
 import lombok.AllArgsConstructor;
 
@@ -138,7 +142,10 @@ public class TransactionService {
         if (transaction.getPaymentStatus() == Status.EXPIRED) {
             throw new ServiceException(406, "Transaction expired, Kindly initialize another transaction");
         }
+        LocalDateTime now = LocalDateTime.now();
         transaction.setPaymentStatus(Status.PAID);
+        transaction.setCompleted(true);
+        transaction.setCompletedOn(now);
         transactionRepository.save(transaction);
 
         return CardChargeResponseDto.builder()
@@ -150,6 +157,16 @@ public class TransactionService {
                 .build();
 
 
+    }
+
+    public PageImpl<AllTransactionsResponseDto> getTransactions(GetAllTransactionsQueryParams params) {
+        
+        Page<Transaction> pagedTransactions = transactionRepository.findByFilter(params.getCustomerName(), params.getCustomerEmail(), params.getAmount(), params.getFromAmount(), params.getToAmount(), params.getPaymentStatus(), params.getTo(), params.getFrom(), params.getPageable());
+
+        List<AllTransactionsResponseDto> updatedTransactions = pagedTransactions.getContent().stream()
+                                    .map(transaction -> transactionMapper.toTransactionResponseDto(transaction))
+                                    .collect(Collectors.toList());
+        return new PageImpl<AllTransactionsResponseDto>(updatedTransactions, pagedTransactions.getPageable(), pagedTransactions.getTotalElements());
     }
 
 

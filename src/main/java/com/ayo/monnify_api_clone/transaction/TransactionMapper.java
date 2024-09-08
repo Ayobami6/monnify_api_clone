@@ -4,7 +4,9 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import com.ayo.monnify_api_clone.transaction.dto.AllTransactionsResponseDto;
 import com.ayo.monnify_api_clone.transaction.dto.BankTransferInitResponseDto;
+import com.ayo.monnify_api_clone.transaction.dto.CustomerDto;
 
 @Service
 public class TransactionMapper {
@@ -29,6 +31,30 @@ public class TransactionMapper {
                 .fee( Integer.parseInt(data.get("fee").toString()) )
                 .productInformation(null)
                 .build();
+    }
+
+    public AllTransactionsResponseDto toTransactionResponseDto(Transaction transaction) {
+        CustomerDto customerDto = CustomerDto.builder()
+                                    .email(transaction.getCustomerEmail())
+                                    .name(transaction.getCustomerName())
+                                    .merchantCode(transaction.getContractCode())
+                                    .build();
+        return AllTransactionsResponseDto.builder()
+                    .customerDto(customerDto)
+                    .amount(transaction.getAmount())
+                    .collectionChannel(transaction.getCollectionChannel())
+                    .completed(transaction.getCompleted())
+                    .createdOn(transaction.getCreatedAt())
+                    .completedOn(transaction.getCompletedOn())
+                    .currencyCode(transaction.getCurrencyCode())
+                    .flagged(transaction.getFlagged())
+                    .merchantCode(transaction.getContractCode())
+                    .paymentDescription(transaction.getPaymentDescription())
+                    .paymentMethods(transaction.getPaymentMethods())
+                    .paymentStatus(transaction.getPaymentStatus())
+                    .paymentReference(transaction.getPaymentReference())
+                    .transactionReference(transaction.getTransactionReference())
+                    .build();
     }
 
 

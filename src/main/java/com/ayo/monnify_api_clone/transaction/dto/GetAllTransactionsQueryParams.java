@@ -12,11 +12,11 @@ import java.time.LocalDateTime;
 @Data
 @Builder
 public class GetAllTransactionsQueryParams {
-    Pageable pageable;
+    private Pageable pageable;
     private String fromAmount;
     private String toAmount;
     private String amount;
-    private Status paymentStatus;
+    private String paymentStatus;
     private String customerName;
     private String customerEmail;
     private LocalDateTime from;
