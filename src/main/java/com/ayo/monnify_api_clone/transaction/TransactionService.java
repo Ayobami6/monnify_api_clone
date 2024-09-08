@@ -112,12 +112,13 @@ public class TransactionService {
 
     public CardChargeResponseDto chargeCard(ChargeCardDto pl) {
 
-        LocalDate cardDate = LocalDate.of(Integer.parseInt(pl.getCard().getExpiryMonth()), Integer.parseInt(pl.getCard().getExpiryYear()), 1);
+        System.out.println(pl.getCard().getExpiryYear());
+        LocalDate cardDate = LocalDate.of(Integer.parseInt(pl.getCard().getExpiryYear()), Integer.parseInt(pl.getCard().getExpiryMonth()), 1);
         LocalDate today = LocalDate.now();
         boolean isExpress = isAmericanExpress((pl.getCard().getNumber()));
         boolean isValid = isLuhnsValid(pl.getCard().getNumber());
         if (cardDate.isBefore(today)) {
-            throw new ServiceException(400, "Card expiration date is not valid");
+            throw new ServiceException(400, "Card Expired!");
         }
         if (isExpress) {
             if ((pl.getCard().getCvv()).length() != 4 ) {
@@ -133,6 +134,10 @@ public class TransactionService {
         }
 //        get Transaction and update payment status
         Transaction transaction = transactionRepository.findByTransactionReference(pl.getTransactionReference()).orElseThrow(() -> new ServiceException(404, "Transaction not found"));
+        // check if transaction is expired
+        if (transaction.getPaymentStatus() == Status.EXPIRED) {
+            throw new ServiceException(406, "Transaction expired, Kindly initialize another transaction");
+        }
         transaction.setPaymentStatus(Status.PAID);
         transactionRepository.save(transaction);
 
