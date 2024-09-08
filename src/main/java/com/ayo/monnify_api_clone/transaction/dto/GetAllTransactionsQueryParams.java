@@ -6,7 +6,7 @@ import com.ayo.monnify_api_clone.transaction.enums.Status;
 
 import lombok.Builder;
 import lombok.Data;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 
 @Data
@@ -19,7 +19,7 @@ public class GetAllTransactionsQueryParams {
     private String paymentStatus;
     private String customerName;
     private String customerEmail;
-    private LocalDateTime from;
-    private LocalDateTime to;
+    private LocalDate from;
+    private LocalDate to;
 
 }

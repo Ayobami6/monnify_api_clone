@@ -22,7 +22,7 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
     ArrayList<Transaction>getOldPendingTransactions(@Param("today") LocalDate today); 
 
     @Query(
-        value ="SELECT * FROM Transactions t WHERE (:customer_name IS NULL OR t.customer_name = :customer_name) AND (:customer_email IS NULL OR t.customer_email = :customer_email) AND (:amount IS NULL OR t.amount = :amount) AND (:payment_status IS NULL OR t.payment_status = :payment_status) AND (:from_amount IS NULL OR t.amount >= :from_amount) AND (:to_amount IS NULL OR t.amount <= :to_amount)"
+        value ="SELECT * FROM Transactions t WHERE (:customer_name IS NULL OR t.customer_name = :customer_name) AND (:customer_email IS NULL OR t.customer_email = :customer_email) AND (:amount IS NULL OR t.amount = :amount) AND (:payment_status IS NULL OR t.payment_status = :payment_status) AND (:from_amount IS NULL OR t.amount >= :from_amount) AND (:to_amount IS NULL OR t.amount <= :to_amount) AND (:toDate IS NULL OR CAST(t.created_at AS DATE) <= :toDate  AND (:fromDate IS NULL OR CAST(t.created_at AS DATE) >= :fromDate))"
     , 
     nativeQuery = true)
     Page<Transaction> findByFilter(
@@ -32,8 +32,8 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
         @Param("from_amount") String fromAmount,
         @Param("to_amount") String toAmount,
         @Param("payment_status") String paymentStatus,
-        @Param("to") LocalDateTime to,
-        @Param("from") LocalDateTime from,
+        @Param("toDate") LocalDate toDate,
+        @Param("fromDate") LocalDate fromDate,
         Pageable pageable
     );
 

@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 
@@ -79,8 +80,8 @@ public class TransactionController {
         @RequestParam(required = false) String paymentStatus,
         @RequestParam(required = false) String[] sortBy
     ) {
-        LocalDateTime toDate = (to != null) ? LocalDateTime.parse(to, DateTimeFormatter.ISO_DATE_TIME) : null;
-        LocalDateTime fromDate = (from!= null)? LocalDateTime.parse(from, DateTimeFormatter.ISO_DATE_TIME) : null;
+        LocalDate toDate = (to != null) ? LocalDate.parse(to, DateTimeFormatter.ISO_DATE_TIME) : null;
+        LocalDate fromDate = (from!= null)? LocalDate.parse(from, DateTimeFormatter.ISO_DATE_TIME) : null;
         
         
         Sort sort = sortBy != null ? Sort.by(sortBy) : null;
