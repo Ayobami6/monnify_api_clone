@@ -3,6 +3,7 @@ package com.ayo.monnify_api_clone.transaction;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.ayo.monnify_api_clone.transaction.enums.CollectionChannel;
 import com.ayo.monnify_api_clone.transaction.enums.PaymentMethod;
 import com.ayo.monnify_api_clone.transaction.enums.Status;
 import com.ayo.monnify_api_clone.utils.Utils;
@@ -53,6 +54,9 @@ public class Transaction {
 
     @Builder.Default
     private Boolean completed = false;
+
+    @Builder.Default
+    private CollectionChannel collectionChannel = CollectionChannel.API_NOTIFICATION;
 
 
     @Builder.Default
