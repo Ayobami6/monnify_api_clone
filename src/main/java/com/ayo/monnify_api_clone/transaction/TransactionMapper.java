@@ -1,12 +1,16 @@
 package com.ayo.monnify_api_clone.transaction;
 
-import java.util.Map;
+import java.util.*;
 
 import org.springframework.stereotype.Service;
 
+import com.ayo.monnify_api_clone.account.CardDetail;
 import com.ayo.monnify_api_clone.transaction.dto.AllTransactionsResponseDto;
 import com.ayo.monnify_api_clone.transaction.dto.BankTransferInitResponseDto;
 import com.ayo.monnify_api_clone.transaction.dto.CustomerDto;
+import com.ayo.monnify_api_clone.transaction.dto.GetTransactionStatusResponseDto;
+import java.time.format.DateTimeFormatter;
+
 
 @Service
 public class TransactionMapper {
@@ -56,6 +60,40 @@ public class TransactionMapper {
                     .transactionReference(transaction.getTransactionReference())
                     .build();
     }
+
+    public GetTransactionStatusResponseDto toTransactionStatusResponseDto(Transaction pl, CardDetail cardDetail) {
+        HashMap<String, String> customer = new HashMap<String, String>();
+        customer.put("email", pl.getCustomerEmail());
+        customer.put("name", pl.getCustomerName());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss a");
+        String formattedDate = pl.getUpdatedAt().format(formatter);
+        HashMap<String, Object> product = new HashMap<String, Object>();
+        product.put("type", pl.getCollectionChannel());
+        product.put("paymentReference", pl.getPaymentReference());
+        return GetTransactionStatusResponseDto.builder()
+                                                .accountDetails(null)
+                                                .amountPaid(pl.getAmount())
+                                                .cardDetails(cardDetail)
+                                                .customer(customer)
+                                                .currency("NGN")
+                                                .paidOn(formattedDate)
+                                                .paymentDescription(pl.getPaymentDescription())
+                                                .paymentMethod(pl.getPaymentMethod().toString())
+                                                .transactionReference(pl.getTransactionReference())
+                                                .paymentStatus(pl.getPaymentStatus().toString())
+                                                .paymentReference(pl.getPaymentReference())
+                                                .totalPayable(pl.getAmount())
+                                                .product(product)
+                                                .build();
+
+
+
+
+    }
+
+
+
+
 
 
 }

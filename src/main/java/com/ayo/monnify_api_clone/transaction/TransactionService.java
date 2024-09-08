@@ -18,6 +18,8 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import com.ayo.monnify_api_clone.account.CardDetail;
+import com.ayo.monnify_api_clone.account.CardRepository;
 import com.ayo.monnify_api_clone.banks.Bank;
 import com.ayo.monnify_api_clone.banks.BankRepository;
 import com.ayo.monnify_api_clone.exception.ServiceException;
@@ -38,6 +40,7 @@ public class TransactionService {
     private final BankRepository bankRepository;
     private final RedisTemplate<String, Object> redisTemplate;
     private final TransactionMapper transactionMapper;
+    private final CardRepository cardRepository;
 
     // initialize a transaction
 
@@ -107,7 +110,7 @@ public class TransactionService {
         data.put("totalPayable", transaction.getAmount());
         data.put("collectionChannel", "API_NOTIFICATION");
         data.put("ussdPayment", ussdCode);
-        // cache the data 
+        // cache the data for transfer payment verification
         redisTemplate.opsForValue().set(pl.getTransactionReference(), data, 30, TimeUnit.MINUTES);
 
         return transactionMapper.toBankTransferInitResponseDto(data);
@@ -147,6 +150,19 @@ public class TransactionService {
         transaction.setCompleted(true);
         transaction.setCompletedOn(now);
         transactionRepository.save(transaction);
+        // save card after transaction update
+        String last4 = pl.getCard().getNumber().substring(pl.getCard().getNumber().length() - 4);
+        String bin = pl.getCard().getNumber().substring(0, 6);
+        String maskedPan = String.format("%s******%s", bin, last4);
+        CardDetail card = CardDetail.builder()
+                                    .last4(last4)
+                                    .bin(bin)
+                                    .cardType("VISA")
+                                    .maskedPan(maskedPan)
+                                    .expMonth(pl.getCard().getExpiryMonth())
+                                    .expYear(pl.getCard().getExpiryYear())
+                                    .build();
+        cardRepository.save(card);
 
         return CardChargeResponseDto.builder()
                 .transactionReference(transaction.getTransactionReference())
@@ -168,6 +184,14 @@ public class TransactionService {
                                     .collect(Collectors.toList());
         return new PageImpl<AllTransactionsResponseDto>(updatedTransactions, pagedTransactions.getPageable(), pagedTransactions.getTotalElements());
     }
+
+
+    public GetTransactionStatusResponseDto getTransactionStatus(String transactionReference) {
+        
+        return null;
+    }
+
+    
 
 
     /**
