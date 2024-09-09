@@ -2,6 +2,7 @@ package com.ayo.monnify_api_clone.transaction;
 
 import com.ayo.monnify_api_clone.exception.InternalServerException;
 import com.ayo.monnify_api_clone.transaction.dto.*;
+import com.ayo.monnify_api_clone.transaction.enums.PaymentMethod;
 import com.ayo.monnify_api_clone.transaction.enums.Status;
 import lombok.RequiredArgsConstructor;
 
@@ -20,6 +21,8 @@ import org.springframework.stereotype.Service;
 
 import com.ayo.monnify_api_clone.account.CardDetail;
 import com.ayo.monnify_api_clone.account.CardRepository;
+import com.ayo.monnify_api_clone.account.OneTimeAccount;
+import com.ayo.monnify_api_clone.account.OneTimeAccountRepository;
 import com.ayo.monnify_api_clone.banks.Bank;
 import com.ayo.monnify_api_clone.banks.BankRepository;
 import com.ayo.monnify_api_clone.exception.ServiceException;
@@ -41,6 +44,7 @@ public class TransactionService {
     private final RedisTemplate<String, Object> redisTemplate;
     private final TransactionMapper transactionMapper;
     private final CardRepository cardRepository;
+    private final OneTimeAccountRepository oneTimeAccountRepository;
 
     // initialize a transaction
 
@@ -161,6 +165,7 @@ public class TransactionService {
                                     .maskedPan(maskedPan)
                                     .expMonth(pl.getCard().getExpiryMonth())
                                     .expYear(pl.getCard().getExpiryYear())
+                                    .transactionReference(transaction.getTransactionReference())
                                     .build();
         cardRepository.save(card);
 
@@ -187,8 +192,20 @@ public class TransactionService {
 
 
     public GetTransactionStatusResponseDto getTransactionStatus(String transactionReference) {
-        
-        return null;
+        // find transaction by transRef
+        Transaction transaction = transactionRepository.findByTransactionReference(transactionReference).orElseThrow(() -> new ServiceException(404, "Transaction Not Found!"));
+        // get card details for the transaction if transaction is paid and paymentmethod is card
+        CardDetail cardDetail = null;
+        OneTimeAccount dynamicAccount = null;
+        if (transaction.getPaymentStatus() == Status.PAID && transaction.getPaymentMethod() == PaymentMethod.CARD) {
+            cardDetail = cardRepository.findByTransactionReference(transactionReference).orElseThrow(() -> new ServiceException(404, "Payment Record Not Found!"));
+            
+        } else if (transaction.getPaymentStatus() == Status.PAID && transaction.getPaymentMethod() == PaymentMethod.ACCOUNT_TRANSFER) {
+            dynamicAccount = oneTimeAccountRepository.findByPaymentReference(transaction.getPaymentReference()).orElseThrow(() -> new ServiceException(404, "Payment Record Not Found!"));
+        } 
+
+        GetTransactionStatusResponseDto responseDto = transactionMapper.toTransactionStatusResponseDto(transaction, cardDetail, dynamicAccount);
+        return responseDto;
     }
 
     

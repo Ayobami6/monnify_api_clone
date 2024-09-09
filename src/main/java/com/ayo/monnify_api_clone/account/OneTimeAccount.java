@@ -25,5 +25,7 @@ public class OneTimeAccount {
     private String accountNumber;
     private String bankName;
     private String bankCode;
+    private String paymentReference;
+    private String transactionReference;
 
 }

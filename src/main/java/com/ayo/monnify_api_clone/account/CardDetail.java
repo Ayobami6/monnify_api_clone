@@ -39,5 +39,6 @@ public class CardDetail {
     @Column(name = "support_tokenization", nullable = true)
     private String supportTokenization;
     private String maskedPan;
+    private String transactionReference;
 
 }

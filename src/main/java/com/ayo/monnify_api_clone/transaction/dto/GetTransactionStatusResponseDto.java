@@ -1,7 +1,5 @@
 package com.ayo.monnify_api_clone.transaction.dto;
 
-import org.hibernate.mapping.List;
-import org.hibernate.mapping.Map;
 import java.util.*;
 
 import com.ayo.monnify_api_clone.account.CardDetail;

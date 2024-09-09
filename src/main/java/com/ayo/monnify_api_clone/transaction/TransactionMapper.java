@@ -5,10 +5,13 @@ import java.util.*;
 import org.springframework.stereotype.Service;
 
 import com.ayo.monnify_api_clone.account.CardDetail;
+import com.ayo.monnify_api_clone.account.OneTimeAccount;
 import com.ayo.monnify_api_clone.transaction.dto.AllTransactionsResponseDto;
 import com.ayo.monnify_api_clone.transaction.dto.BankTransferInitResponseDto;
 import com.ayo.monnify_api_clone.transaction.dto.CustomerDto;
 import com.ayo.monnify_api_clone.transaction.dto.GetTransactionStatusResponseDto;
+import com.ayo.monnify_api_clone.transaction.enums.Status;
+
 import java.time.format.DateTimeFormatter;
 
 
@@ -61,17 +64,17 @@ public class TransactionMapper {
                     .build();
     }
 
-    public GetTransactionStatusResponseDto toTransactionStatusResponseDto(Transaction pl, CardDetail cardDetail) {
+    public GetTransactionStatusResponseDto toTransactionStatusResponseDto(Transaction pl, CardDetail cardDetail, OneTimeAccount oneTimeAccount) {
         HashMap<String, String> customer = new HashMap<String, String>();
         customer.put("email", pl.getCustomerEmail());
         customer.put("name", pl.getCustomerName());
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm:ss a");
-        String formattedDate = pl.getUpdatedAt().format(formatter);
+        String formattedDate = pl.getPaymentStatus() == Status.PAID ? pl.getUpdatedAt().format(formatter) : null;
         HashMap<String, Object> product = new HashMap<String, Object>();
         product.put("type", pl.getCollectionChannel());
         product.put("paymentReference", pl.getPaymentReference());
         return GetTransactionStatusResponseDto.builder()
-                                                .accountDetails(null)
+                                                .accountDetails(oneTimeAccount)
                                                 .amountPaid(pl.getAmount())
                                                 .cardDetails(cardDetail)
                                                 .customer(customer)
