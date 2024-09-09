@@ -1,5 +1,7 @@
 package com.ayo.monnify_api_clone.account;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -31,8 +33,9 @@ public class Account {
     @ManyToOne()
     @JoinColumn(
         name = "account_reference",
-        referencedColumnName = "accountReference"
+        referencedColumnName = "account_reference"
     )
+    @JsonManagedReference
     private ReservedAccount reservedAccount;
 
 }

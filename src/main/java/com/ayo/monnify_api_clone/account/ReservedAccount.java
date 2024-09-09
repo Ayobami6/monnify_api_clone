@@ -3,9 +3,13 @@ package com.ayo.monnify_api_clone.account;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.hibernate.mapping.Any;
+
 import com.ayo.monnify_api_clone.account.enums.ReservedAccountStatus;
 import com.ayo.monnify_api_clone.account.enums.ReservedAccountType;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -30,6 +34,7 @@ public class ReservedAccount {
     @GeneratedValue
     private Long id;
 
+    @Column(name = "account_reference", nullable = false, unique = true)
     private String accountReference;
     private String accountName;
     @Builder.Default
@@ -41,9 +46,9 @@ public class ReservedAccount {
     private String nin;
     private boolean getAllAvailableBanks;
     private List<String> preferredBanks;
-    private Object incomeSplitConfig;
+    private Any incomeSplitConfig;
     private boolean restrictPaymentSource;
-    private Object allowedPaymentSource;
+    private Any allowedPaymentSource;
     private ReservedAccountType reservedAccountType;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
@@ -52,6 +57,7 @@ public class ReservedAccount {
     @OneToMany(
         mappedBy = "reservedAccount"
     )
+    @JsonBackReference
     private List<Account> accounts;
 
     @PrePersist
