@@ -18,6 +18,7 @@ public class AccountMapper {
                                 .nin(pl.getNin())
                                 .customerEmail(pl.getCustomerEmail())
                                 .customerName(pl.getCustomerName())
+                                .getAllAvailableBanks(pl.isGetAllAvailableBanks())
                                 .build();
     }
 

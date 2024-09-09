@@ -6,4 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ReservedAccountRepository extends JpaRepository<ReservedAccount, Long> {  
     Optional<ReservedAccount>findByAccountReference(String accountReference);
+
+    boolean existsByAccountReference(String accountReference);
 } 
