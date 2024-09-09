@@ -1,5 +1,6 @@
 package com.ayo.monnify_api_clone.account;
 
-public class ReservedAccountRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
 
-}
+public interface ReservedAccountRepository extends JpaRepository<ReservedAccount, Long> {  
+} 
