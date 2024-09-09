@@ -53,15 +53,19 @@ public class ReservedAccountService {
             banks = preferredBanks.stream().map(item -> bankRepository.findByCode(item).orElseThrow(() -> new ServiceException(404, "Bank not available"))).collect(Collectors.toList());
         }
         // create new accounts with bank info
-        banks.forEach(bank -> createBankAccount(bank, reservedAccount));
+        List<Account> accounts =  banks.stream().map(bank -> createBankAccount(bank, reservedAccount)).collect(Collectors.toList());;
         // get the create reserved account
         ReservedAccount createdReservedAccount = reservedAccountRepository.findByAccountReference(pl.getAccountReference()).orElseThrow(() -> new ServiceException(406, "Couldn't Create Account"));
-        
+        createdReservedAccount.setAccounts(accounts);
         return createdReservedAccount;
     }
 
+    public ReservedAccount getReservedAccountByAccountRef(String accountReference) {
+        return reservedAccountRepository.findByAccountReference(accountReference).orElseThrow(() -> new ServiceException(404, "Reserved Not Found!"));
+    }
+
     // create bank info
-    private void createBankAccount(Bank bank, ReservedAccount reservedAccount) {
+    private Account createBankAccount(Bank bank, ReservedAccount reservedAccount) {
         String bankAccountNumber = Long.toString(Utils.generateRandomNumber());
         Account bankAccount = Account.builder()
                                         .accountName(reservedAccount.getAccountName())
@@ -72,7 +76,7 @@ public class ReservedAccountService {
                                         .bankName(bank.getName())
                                         .build();
 
-        accountRepository.save(bankAccount);
+        return accountRepository.save(bankAccount);
     }
 
     

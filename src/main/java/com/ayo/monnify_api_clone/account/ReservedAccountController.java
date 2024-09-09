@@ -1,6 +1,8 @@
 package com.ayo.monnify_api_clone.account;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +25,12 @@ public class ReservedAccountController {
     @PostMapping("/bank-transfer/reserved-account")
     public ResponseEntity<ApiResponse> reserveAccount(@RequestBody CreateReservedAccountDto pl) {
         ReservedAccount reservedAccount = reservedAccountService.createReservedAccount(pl);
+        ApiResponse response = apiResponseMapper.mapDataToResponse(reservedAccount);
+        return ResponseEntity.status(200).body(response);      
+    }
+    @GetMapping("/bank-transfer/reserved-account/{accountReference}")
+    public ResponseEntity<ApiResponse> getReservedAccount(@PathVariable String accountReference) {
+        ReservedAccount reservedAccount = reservedAccountService.getReservedAccountByAccountRef(accountReference);
         ApiResponse response = apiResponseMapper.mapDataToResponse(reservedAccount);
         return ResponseEntity.status(200).body(response);      
     }

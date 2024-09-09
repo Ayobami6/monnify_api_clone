@@ -7,7 +7,8 @@ import org.hibernate.mapping.Any;
 
 import com.ayo.monnify_api_clone.account.enums.ReservedAccountStatus;
 import com.ayo.monnify_api_clone.account.enums.ReservedAccountType;
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -32,6 +33,7 @@ public class ReservedAccount {
 
     @Id
     @GeneratedValue
+    @JsonIgnore
     private Long id;
 
     @Column(name = "account_reference", nullable = false, unique = true)
@@ -49,7 +51,8 @@ public class ReservedAccount {
     private Any incomeSplitConfig;
     private boolean restrictPaymentSource;
     private Any allowedPaymentSource;
-    private ReservedAccountType reservedAccountType;
+    @Builder.Default
+    private ReservedAccountType reservedAccountType = ReservedAccountType.GENERAL;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     @Builder.Default
@@ -57,7 +60,7 @@ public class ReservedAccount {
     @OneToMany(
         mappedBy = "reservedAccount"
     )
-    @JsonBackReference
+    @JsonManagedReference
     private List<Account> accounts;
 
     @PrePersist
