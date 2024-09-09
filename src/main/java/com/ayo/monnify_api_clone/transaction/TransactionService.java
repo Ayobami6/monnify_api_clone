@@ -168,6 +168,7 @@ public class TransactionService {
                                     .transactionReference(transaction.getTransactionReference())
                                     .build();
         cardRepository.save(card);
+        // send notification to webhook using the message broker
 
         return CardChargeResponseDto.builder()
                 .transactionReference(transaction.getTransactionReference())

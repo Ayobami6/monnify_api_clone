@@ -3,6 +3,8 @@ package com.ayo.monnify_api_clone.account;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,10 +23,16 @@ public class Account {
     @GeneratedValue
     private Long id;
 
-    private String accountReference;
     private String accountNumber;
     private String accountName;
     private String bankName;
     private String bankCode;
+
+    @ManyToOne()
+    @JoinColumn(
+        name = "account_reference",
+        referencedColumnName = "accountReference"
+    )
+    private ReservedAccount reservedAccount;
 
 }
