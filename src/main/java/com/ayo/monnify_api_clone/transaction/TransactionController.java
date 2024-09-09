@@ -108,7 +108,7 @@ public class TransactionController {
         return ResponseEntity.status(200).body(response);
     }
 
-    @GetMapping("transactions/{transactionReference}")
+    @GetMapping("/transactions/{transactionReference}")
     public ResponseEntity<ApiResponse> getTransactionStatus(@PathVariable("transactionReference") String transactionReference) {
         GetTransactionStatusResponseDto res = transactionService.getTransactionStatus(transactionReference);
         ApiResponse response = apiResponseMapper.mapDataToResponse(res);
