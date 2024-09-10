@@ -32,13 +32,13 @@ public class ReservedAccountController {
         return ResponseEntity.status(200).body(response);      
     }
     @GetMapping("/bank-transfer/reserved-accounts/{accountReference}")
-    public ResponseEntity<ApiResponse> getReservedAccount(@PathVariable String accountReference) {
+    public ResponseEntity<ApiResponse> getReservedAccount(@PathVariable("accountReference") String accountReference) {
         ReservedAccount reservedAccount = reservedAccountService.getReservedAccountByAccountRef(accountReference);
         ApiResponse response = apiResponseMapper.mapDataToResponse(reservedAccount);
         return ResponseEntity.status(200).body(response);      
     }
 
-    @PostMapping("/bank-transfer/reserved-account-invoice")
+    @PostMapping("/bank-transfer/reserved-accounts-invoice")
     public ResponseEntity<ApiResponse> createInvoice(@RequestBody CreateReservedAccountInvoiceDto pl) {
         InvoiceResponseDto reservedAccountInvoice = reservedAccountService.createReservedAccountInvoice(pl);
         ApiResponse response = apiResponseMapper.mapDataToResponse(reservedAccountInvoice);
@@ -46,7 +46,7 @@ public class ReservedAccountController {
     }
 
     @DeleteMapping("/bank-transfer/reserved-accounts/reference/{accountReference}")
-    public ResponseEntity<ApiResponse> deleteReservedAccount(@PathVariable String accountReference) {
+    public ResponseEntity<ApiResponse> deleteReservedAccount(@PathVariable("accountReference") String accountReference) {
         ReservedAccount reservedAccount = reservedAccountService.deAllocateReservedAccount(accountReference);
         ApiResponse response = apiResponseMapper.mapDataToResponse(reservedAccount);
         return ResponseEntity.status(200).body(response);

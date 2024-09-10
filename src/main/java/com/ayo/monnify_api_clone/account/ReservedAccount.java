@@ -10,6 +10,7 @@ import com.ayo.monnify_api_clone.account.enums.ReservedAccountType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -58,7 +59,8 @@ public class ReservedAccount {
     @Builder.Default
     private ReservedAccountStatus status = ReservedAccountStatus.ACTIVE;
     @OneToMany(
-        mappedBy = "reservedAccount"
+        mappedBy = "reservedAccount",
+        cascade = CascadeType.ALL
     )
     @JsonManagedReference
     private List<Account> accounts;

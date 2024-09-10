@@ -42,4 +42,12 @@ public class Utils {
         return ref;
     }
 
+    public static String generateSubAccountCode() {
+        String prefix = "MFYC_SUB";
+        Long suffix = generateRandomNumber();
+        String ref = String.format("%s_%s", prefix, suffix);
+        return ref;
+
+    }
+
 }

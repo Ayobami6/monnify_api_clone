@@ -3,6 +3,7 @@ package com.ayo.monnify_api_clone.account;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -32,7 +33,9 @@ public class Account {
     private String bankName;
     private String bankCode;
 
-    @ManyToOne()
+    @ManyToOne(
+        cascade = CascadeType.ALL
+    )
     @JoinColumn(
         name = "reserved_account_id",
         referencedColumnName = "account_reference"
