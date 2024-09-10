@@ -85,6 +85,13 @@ public class ReservedAccountService {
         return accountMapper.toInvoiceResponseDto(reservedAccount, account);
     }
 
+    public ReservedAccount deAllocateReservedAccount(String accountReference) {
+        ReservedAccount reservedAccount = reservedAccountRepository.findByAccountReference(accountReference)
+                                                                        .orElseThrow(() -> new ServiceException(404, "Reserved Not Found!"));
+        reservedAccountRepository.delete(reservedAccount);
+        return reservedAccount;
+    }
+
 
     // create bank info
     private Account createBankAccount(Bank bank, ReservedAccount reservedAccount) {
