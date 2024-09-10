@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ayo.monnify_api_clone.account.dto.CreateReservedAccountDto;
+import com.ayo.monnify_api_clone.account.dto.CreateReservedAccountInvoiceDto;
+import com.ayo.monnify_api_clone.account.dto.InvoiceResponseDto;
 import com.ayo.monnify_api_clone.utils.ApiResponse;
 import com.ayo.monnify_api_clone.utils.ApiResponseMapper;
 
@@ -32,6 +34,13 @@ public class ReservedAccountController {
     public ResponseEntity<ApiResponse> getReservedAccount(@PathVariable String accountReference) {
         ReservedAccount reservedAccount = reservedAccountService.getReservedAccountByAccountRef(accountReference);
         ApiResponse response = apiResponseMapper.mapDataToResponse(reservedAccount);
+        return ResponseEntity.status(200).body(response);      
+    }
+
+    @PostMapping("/bank-transfer/reserved-account-invoice")
+    public ResponseEntity<ApiResponse> createInvoice(@RequestBody CreateReservedAccountInvoiceDto pl) {
+        InvoiceResponseDto reservedAccountInvoice = reservedAccountService.createReservedAccountInvoice(pl);
+        ApiResponse response = apiResponseMapper.mapDataToResponse(reservedAccountInvoice);
         return ResponseEntity.status(200).body(response);      
     }
 

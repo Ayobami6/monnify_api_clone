@@ -86,8 +86,6 @@ public class ReservedAccountService {
     }
 
 
-
-
     // create bank info
     private Account createBankAccount(Bank bank, ReservedAccount reservedAccount) {
         String bankAccountNumber = Long.toString(Utils.generateRandomNumber());
