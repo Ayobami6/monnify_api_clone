@@ -7,6 +7,8 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.ayo.monnify_api_clone.account.dto.CreateReservedAccountDto;
+import com.ayo.monnify_api_clone.account.dto.CreateReservedAccountInvoiceDto;
+import com.ayo.monnify_api_clone.account.dto.InvoiceResponseDto;
 import com.ayo.monnify_api_clone.banks.Bank;
 import com.ayo.monnify_api_clone.banks.BankRepository;
 import com.ayo.monnify_api_clone.exception.ServiceException;
@@ -63,6 +65,28 @@ public class ReservedAccountService {
     public ReservedAccount getReservedAccountByAccountRef(String accountReference) {
         return reservedAccountRepository.findByAccountReference(accountReference).orElseThrow(() -> new ServiceException(404, "Reserved Not Found!"));
     }
+
+
+    public InvoiceResponseDto createReservedAccountInvoice(CreateReservedAccountInvoiceDto pl) {
+        // check merchant contract code exists
+        if (!userRepository.existsByContractCode(Long.parseLong(pl.getContractCode()))){
+            throw new ServiceException(400, "Merchant with contract code does not exists");   
+        }
+        if (reservedAccountRepository.existsByAccountReference(pl.getAccountReference())) {
+            throw new ServiceException(400, "You can not reserve two accounts with the same reference");
+        }
+        List<Bank> banks = bankRepository.findAll();
+
+        Bank bank = banks.get((int) Math.random() * 5);
+
+        ReservedAccount reservedAccount = accountMapper.toReservedAccountFromInvoiceDto(pl);
+        reservedAccountRepository.save(reservedAccount);
+        Account account = createBankAccount(bank, reservedAccount);
+        return accountMapper.toInvoiceResponseDto(reservedAccount, account);
+    }
+
+
+
 
     // create bank info
     private Account createBankAccount(Bank bank, ReservedAccount reservedAccount) {
