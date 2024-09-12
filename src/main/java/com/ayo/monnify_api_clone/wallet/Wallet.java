@@ -1,6 +1,9 @@
 package com.ayo.monnify_api_clone.wallet;
 
 import java.time.LocalDateTime;
+import java.util.Map;
+
+import org.hibernate.mapping.Any;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -33,10 +36,11 @@ public class Wallet {
     private String customerEmail;
     private String feeBearer;
     private String contractCode;
-    private Object bvnDetails;
     private String accountNumber;
     private String accountName;
     private String bankName;
+    private Long availableBalance;
+    private Long ledgerBalance;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

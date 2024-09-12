@@ -2,6 +2,7 @@ package com.ayo.monnify_api_clone.exception;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
@@ -58,6 +59,18 @@ public class GlobalExceptionHandler {
                 .responseBody("")
                 .build();
         return ResponseEntity.status(404).body(apiResponse);
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ApiResponse> handleValidationExceptions(MethodArgumentNotValidException exc){
+        exc.printStackTrace();
+        ApiResponse apiResponse = ApiResponse.builder()
+                .requestSuccessful(false)
+                .responseCode("99")
+                .responseMessage(exc.getBindingResult().getAllErrors().get(0).getDefaultMessage())
+                .responseBody("")
+                .build();
+        return ResponseEntity.status(400).body(apiResponse);
     }
 
     @ExceptionHandler(Exception.class)
