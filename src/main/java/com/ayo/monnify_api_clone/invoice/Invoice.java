@@ -6,6 +6,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -30,6 +31,7 @@ public class Invoice {
 
     private String amount;
 
+    @Column(name = "invoice_reference", unique = true)
     private String invoiceReference;
 
     private String customerEmail;
