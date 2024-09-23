@@ -33,7 +33,6 @@ public class SchedulerService {
         List<Transaction> oldTransactions = transactionRepository.getOldPendingTransactions(today);
         // open a stream on the transaction
         if (oldTransactions.isEmpty()) {
-            System.out.println("Transaction is empty");
             System.out.println(oldTransactions);
         } else {
             System.out.println("Got here!");
