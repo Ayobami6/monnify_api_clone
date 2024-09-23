@@ -1,6 +1,7 @@
 package com.ayo.monnify_api_clone.invoice;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -25,6 +26,7 @@ public class IncomeSplitConfig {
 
     @Id
     @GeneratedValue
+    @JsonIgnore
     private Long id;
 
     private String invoiceReference;
